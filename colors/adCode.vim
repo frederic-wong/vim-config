@@ -92,7 +92,7 @@ hi Statement                  guifg=#8C5FE6 ctermfg=98   gui=NONE cterm=NONE
 hi String                     guifg=#AFFF4B ctermfg=155  gui=NONE cterm=NONE
 hi Structure                  guifg=#7E8AA2 ctermfg=103  gui=NONE cterm=NONE
 hi Title                      guifg=#F6F3E8 ctermfg=255  gui=NONE cterm=NONE
-hi Todo                       guifg=#757E92 ctermfg=244  gui=NONE cterm=NONE
+hi Todo                       guifg=#FFC423 ctermfg=220  gui=NONE cterm=NONE
 hi Type                       guifg=#54C0FF ctermfg=75   gui=NONE cterm=NONE
 hi Typedef                    guifg=#7E8AA2 ctermfg=103  gui=NONE cterm=NONE
 hi rubyAccess                 guifg=#EF20C0 ctermfg=199  guibg=NONE    ctermbg=NONE gui=ITALIC cterm=NONE
@@ -105,6 +105,7 @@ hi rubyClassVariable          guifg=#8FBFFF ctermfg=111  gui=NONE cterm=NONE
 hi rubyConditional            guifg=#00A787 ctermfg=36   gui=NONE cterm=NONE
 hi rubyConstant               guifg=#FFFF40 ctermfg=227  gui=NONE cterm=NONE
 hi rubyControl                guifg=#AF80FF ctermfg=141  gui=NONE cterm=NONE
+hi rubyComment                guifg=#757E92 ctermfg=244  guibg=NONE    ctermbg=NONE gui=ITALIC cterm=NONE
 hi rubyDefine                 guifg=#AFA0FF ctermfg=147  gui=NONE cterm=NONE
 hi rubyDoBlock                guifg=NONE    ctermfg=NONE guibg=NONE    ctermbg=NONE gui=NONE cterm=NONE
 hi rubyException              guifg=#FD3F44 ctermfg=203  gui=NONE cterm=NONE
@@ -132,7 +133,8 @@ hi rubyRailsTestMethod        guifg=#FAFAFA ctermfg=231  gui=NONE cterm=NONE
 hi rubyString                 guifg=#60FA5C ctermfg=83   gui=NONE cterm=NONE
 hi rubyStringDelimiter        guifg=#00A787 ctermfg=36   gui=NONE cterm=NONE
 hi rubySymbol                 guifg=#00B0FF ctermfg=39   gui=NONE cterm=NONE
-hi rubyReturn                 guifg=#AFA0FF ctermfg=147  gui=NONE cterm=NONE
+hi rubyReturn                 guifg=#AFA0FF ctermfg=147  guibg=NONE    ctermbg=NONE gui=BOLD cterm=BOLD
+hi rubyTodo                   guifg=#FFC423 ctermfg=220  guibg=NONE    ctermbg=NONE gui=BOLD cterm=BOLD
 hi rspecBeforeAndAfter        guifg=#AFA0FF ctermfg=147  gui=NONE cterm=NONE
 hi rspecGroupMethods          guifg=#EA30D0 ctermfg=170  gui=NONE cterm=NONE
 hi rspecMatchers              guifg=#00A787 ctermfg=36   guibg=NONE    ctermbg=NONE gui=BOLD cterm=BOLD

@@ -733,7 +733,7 @@ endif
 " ----------------------------------------------
 
 " Tell Gutentags to store tags in .tags by default
-let g:gutentags_tagfile = '.tags'
+let g:gutentags_ctags_tagfile = '.tags'
 
 let g:tagbar_type_ansible = {
 \   'ctagstype' : 'ansible',

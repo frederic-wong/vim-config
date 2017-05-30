@@ -11,7 +11,7 @@ Plug 'airblade/vim-gitgutter'                                 " Show the column 
 Plug 'vim-airline/vim-airline'                                " Add a nicer status line
 Plug 'vim-airline/vim-airline-themes'                         " Themes for Airline
 Plug 'christoomey/vim-tmux-navigator'                         " Move between Vim panes & Tmux panes easily
-Plug 'colorizer'                                              " Show the colour off Hex colour codes
+Plug 'vim-scripts/colorizer'                                       " Show the colour off Hex colour codes
 Plug 'luochen1990/rainbow'                                    " Colour in brachets in matching pairs
 Plug 'mhinz/vim-startify'                                     " Start Vim with a more useful start screen
 Plug 'nathanaelkane/vim-indent-guides'                        " Show indentation level guides
@@ -43,7 +43,7 @@ Plug 'AndrewRadev/switch.vim'                                 " Quickly switch p
 Plug 'godlygeek/tabular'                                      " Format lines into a table
 Plug 'junegunn/vim-easy-align'                                " Fast alignment of lines based on preset rules
 Plug 'kana/vim-textobj-user'                                  " Extend Vims text object
-Plug 'matchit.zip'                                            " Extend % to match more text objects
+Plug 'vim-scripts/matchit.zip'                                    " Extend % to match more text objects
 Plug 'maxbrunsfeld/vim-yankstack'                             " Paste text, then rotate though things yanked before/after
 Plug 'tpope/vim-commentary'                                   " Quick toggle for code commenting
 Plug 'tpope/vim-abolish'                                      " Allow smartcase substitution and search

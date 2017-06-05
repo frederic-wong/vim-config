@@ -25,7 +25,12 @@ Plug 'tpope/vim-dispatch'                                     " Enable async run
 
 " Search and file exploring
 Plug 'jlanzarotta/bufexplorer'                                " Show a sortable list of open buffers
-Plug 'ctrlpvim/ctrlp.vim'                                     " Really powerful fuzzy finder for file names
+if executable('fzf')
+  Plug 'junegunn/fzf'                                           " User FZF for fuzzy finding files
+  Plug 'junegunn/fzf.vim'                                       " Add nice FZF bindings for tags
+else
+  Plug 'ctrlpvim/ctrlp.vim'                                     " Really powerful fuzzy finder for file names
+end
 Plug 'rking/ag.vim'                                           " Really fast search for text in all files
 Plug 'scrooloose/nerdtree'                                    " Visualise the project directory and make it easy to navigate
 Plug 'tpope/vim-unimpaired'                                   " Extra bindings for common buffer navigation
@@ -281,14 +286,22 @@ vmap aa <Plug>(LiveEasyAlign)
 " <Leader>c<space> to toggle comments on a line
 map <silent> <leader>c<space> gcc
 
-"  <Leader>f to fuzzy search files
-map <silent> <leader>f :CtrlP<cr>
+if executable('fzf')
+  "  <Leader>f to fuzzy search files
+  map <silent> <leader>f :Files<cr>
 
-"  <Leader>F to fuzzy search files in the same directory as the current file
-map <silent> <leader>F :CtrlPCurFile<cr>
+  "  <Leader>} to Search for a tag in the current project
+  map <silent> <leader>} :Tags<cr>
+else
+  "  <Leader>f to fuzzy search files
+  map <silent> <leader>f :CtrlP<cr>
 
-"  <Leader>} to Search for a tag in the current project
-map <silent> <leader>} :CtrlPTag<cr>
+  "  <Leader>F to fuzzy search files in the same directory as the current file
+  map <silent> <leader>F :CtrlPCurFile<cr>
+
+  "  <Leader>} to Search for a tag in the current project
+  map <silent> <leader>} :CtrlPTag<cr>
+end
 
 "  <Leader>g to jump to the next change since git commit
 nmap <leader>g <Plug>GitGutterNextHunk

@@ -681,6 +681,24 @@ let g:rainbow_conf = {
 
 
 " ----------------------------------------------
+" Setup FZF colours
+" ----------------------------------------------
+
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'String'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Boolean'],
+  \ 'info':    ['fg', 'Comment'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+" ----------------------------------------------
 " Configure dynamic code execution tools
 " ----------------------------------------------
 

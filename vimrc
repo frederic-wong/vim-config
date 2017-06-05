@@ -288,7 +288,7 @@ map <silent> <leader>c<space> gcc
 
 if executable('fzf')
   "  <Leader>f to fuzzy search files
-  map <silent> <leader>f :Files<cr>
+  map <silent> <leader>f :GFiles<cr>
 
   "  <Leader>} to Search for a tag in the current project
   map <silent> <leader>} :Tags<cr>

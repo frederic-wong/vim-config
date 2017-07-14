@@ -55,6 +55,7 @@ Plug 'tpope/vim-abolish'                                      " Allow smartcase 
 Plug 'tpope/vim-speeddating'                                  " Extend vim increment/decrement to work on dates
 Plug 'tpope/vim-surround'                                     " Quick editing or insertion for surrounding characters (ie. quickly add quotes around a line)
 Plug 'wellle/targets.vim'                                     " Add lots of extra text objects for brachets, quotes, args and more
+Plug 'dhruvasagar/vim-table-mode'                             " Add some pretty powerful tools for creating ASCII tables
 
 " Snippets and autocomplete
 Plug 'ervandew/supertab'                                      " Make tab more useful in triggering Vim omni-complete

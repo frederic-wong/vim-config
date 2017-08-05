@@ -47,11 +47,10 @@ Plug 'AndrewRadev/switch.vim'                                 " Quickly switch p
 Plug 'godlygeek/tabular'                                      " Format lines into a table
 Plug 'junegunn/vim-easy-align'                                " Fast alignment of lines based on preset rules
 Plug 'kana/vim-textobj-user'                                  " Extend Vims text object
-Plug 'vim-scripts/matchit.zip'                                    " Extend % to match more text objects
+Plug 'vim-scripts/matchit.zip'                                " Extend % to match more text objects
 Plug 'maxbrunsfeld/vim-yankstack'                             " Paste text, then rotate though things yanked before/after
 Plug 'tpope/vim-commentary'                                   " Quick toggle for code commenting
 Plug 'tpope/vim-abolish'                                      " Allow smartcase substitution and search
-Plug 'tpope/vim-speeddating'                                  " Extend vim increment/decrement to work on dates
 Plug 'tpope/vim-surround'                                     " Quick editing or insertion for surrounding characters (ie. quickly add quotes around a line)
 Plug 'wellle/targets.vim'                                     " Add lots of extra text objects for brachets, quotes, args and more
 Plug 'dhruvasagar/vim-table-mode'                             " Add some pretty powerful tools for creating ASCII tables

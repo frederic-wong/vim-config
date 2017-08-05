@@ -11,7 +11,7 @@ Plug 'airblade/vim-gitgutter'                                 " Show the column 
 Plug 'vim-airline/vim-airline'                                " Add a nicer status line
 Plug 'vim-airline/vim-airline-themes'                         " Themes for Airline
 Plug 'christoomey/vim-tmux-navigator'                         " Move between Vim panes & Tmux panes easily
-Plug 'vim-scripts/colorizer'                                       " Show the colour off Hex colour codes
+Plug 'vim-scripts/colorizer'                                  " Show the colour off Hex colour codes
 Plug 'mhinz/vim-startify'                                     " Start Vim with a more useful start screen
 Plug 'nathanaelkane/vim-indent-guides'                        " Show indentation level guides
 Plug 'regedarek/ZoomWin'                                      " Enable one pane to be fullscreened temporarily
@@ -930,33 +930,8 @@ let g:vroom_cucumber_path = 'cucumber '
 let g:vroom_map_keys = 0
 
 
-" ----------------------------------------------
-" Configure dynamic code execution tools
-" ----------------------------------------------
-
-" xmp-filter mappings
-autocmd FileType ruby nmap <buffer> <Leader>X <Plug>(xmpfilter-mark)
-autocmd FileType ruby xmap <buffer> <Leader>X <Plug>(xmpfilter-mark)
-autocmd FileType ruby imap <buffer> <Leader>X <Plug>(xmpfilter-mark)
-
-autocmd FileType ruby nmap <buffer> <Leader>x <Plug>(xmpfilter-run)
-autocmd FileType ruby xmap <buffer> <Leader>x <Plug>(xmpfilter-run)
-autocmd FileType ruby imap <buffer> <Leader>x <Plug>(xmpfilter-run)
-
 " Disable Markdown folding
 let g:vim_markdown_folding_disabled=1
-
-" Don't report Angular ng-* attributes as errors in HTML
-let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
-
-" Projectionist defaults
-let g:projectionist_heuristics ={
-      \  "spec/*.rb": {
-      \     "app/*.rb":       {"alternate": "spec/{}_spec.rb",         "type": "source"},
-      \     "lib/*.rb":       {"alternate": "spec/{}_spec.rb",         "type": "source"},
-      \     "spec/*_spec.rb": {"alternate": ["app/{}.rb","lib/{}.rb"], "type": "test"}
-      \  }
-      \}
 
 " Show current line highlighting only in the active pane
 augroup BgHighlight

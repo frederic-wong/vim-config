@@ -78,7 +78,6 @@ Plug 'vim-scripts/rubycomplete.vim',   {'for': 'ruby'}        " Extend OmniCompl
 Plug 'avdgaag/vim-phoenix',            {'for': 'elixir'}      " Add Projectionist, Dispatch and Mix integrations for Phoenix projects
 
 " JS, CSS & HTML
-Plug 'cakebaker/scss-syntax.vim'                              " SCSS syntax highlighting
 Plug 'adamwhittingham/vim-comb',       {'do': './install.sh'} " Organise and format CSS selectors like a proper human
 Plug 'digitaltoad/vim-jade',           {'for': 'jade'}        " Jade syntax highlighting
 Plug 'moll/vim-node'                                          " NodeJS syntax support

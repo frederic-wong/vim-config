@@ -64,7 +64,7 @@ Plug 'ajh17/VimCompletesMe'                                   " Very lightweight
 " Extra syntax highlighting and language support
 Plug 'scrooloose/syntastic'                                   " The Godfather of all syntax highlighting and checking
 Plug 'sheerun/vim-polyglot'                                   " Currated group of other excellent plugins
-Plug 'niquola/vim-hl7'                                        " HL7 syntax highlighting
+Plug 'niquola/vim-hl7',                {'for': 'hl7'}         " HL7 syntax highlighting
 Plug 'slashmili/alchemist.vim'                                " Hook into Elixir Alchemist server for better completions'
 Plug 'janko-m/vim-test'                                       " Add test running support for lots of languages & test frameworks
 

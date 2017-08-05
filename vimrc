@@ -53,13 +53,15 @@ Plug 'tpope/vim-surround'                                     " Quick editing or
 Plug 'wellle/targets.vim'                                     " Add lots of extra text objects for brachets, quotes, args and more
 Plug 'dhruvasagar/vim-table-mode'                             " Add some pretty powerful tools for creating ASCII tables
 
-" Snippets and autocomplete
+" Autocomplete
 Plug 'ervandew/supertab'                                      " Make tab more useful in triggering Vim omni-complete
-Plug 'SirVer/ultisnips'                                       " Add snippet expantion for all kinds of template formats
-Plug 'honza/vim-snippets'                                     " Add many popular shared snippets
 Plug 'tpope/vim-endwise'                                      " Automatically insert programming block endings (ie. `end` in Ruby, `endif` in VimL)
 Plug 'tpope/vim-ragtag'                                       " Provide bindings for closing HTML/XML tags
 Plug 'ajh17/VimCompletesMe'                                   " Very lightweight completion helper
+
+" Snippets
+Plug 'SirVer/ultisnips'                                       " Add snippet expantion for all kinds of template formats
+Plug 'honza/vim-snippets'                                     " Add many popular shared snippets
 
 " Extra syntax highlighting and language support
 Plug 'scrooloose/syntastic'                                   " The Godfather of all syntax highlighting and checking

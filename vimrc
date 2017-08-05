@@ -79,8 +79,6 @@ Plug 'avdgaag/vim-phoenix',            {'for': 'elixir'}      " Add Projectionis
 
 " JS, CSS & HTML
 Plug 'adamwhittingham/vim-comb',       {'do': './install.sh'} " Organise and format CSS selectors like a proper human
-Plug 'digitaltoad/vim-jade',           {'for': 'jade'}        " Jade syntax highlighting
-Plug 'moll/vim-node'                                          " NodeJS syntax support
 
 
 " Load any extra plugins specified in the home directory

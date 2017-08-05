@@ -46,8 +46,6 @@ Plug 'AndrewRadev/splitjoin.vim'                              " Quick joining or
 Plug 'AndrewRadev/switch.vim'                                 " Quickly switch programming constructs between alternate version (ie. Ruby string to symbol)
 Plug 'godlygeek/tabular'                                      " Format lines into a table
 Plug 'junegunn/vim-easy-align'                                " Fast alignment of lines based on preset rules
-Plug 'kana/vim-textobj-user'                                  " Extend Vims text object
-Plug 'vim-scripts/matchit.zip'                                " Extend % to match more text objects
 Plug 'maxbrunsfeld/vim-yankstack'                             " Paste text, then rotate though things yanked before/after
 Plug 'tpope/vim-commentary'                                   " Quick toggle for code commenting
 Plug 'tpope/vim-abolish'                                      " Allow smartcase substitution and search

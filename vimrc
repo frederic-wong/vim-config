@@ -55,7 +55,6 @@ Plug 'dhruvasagar/vim-table-mode'                             " Add some pretty 
 
 " Autocomplete
 Plug 'ervandew/supertab'                                      " Make tab more useful in triggering Vim omni-complete
-Plug 'tpope/vim-endwise'                                      " Automatically insert programming block endings (ie. `end` in Ruby, `endif` in VimL)
 Plug 'tpope/vim-ragtag'                                       " Provide bindings for closing HTML/XML tags
 Plug 'ajh17/VimCompletesMe'                                   " Very lightweight completion helper
 
@@ -72,6 +71,7 @@ Plug 'janko-m/vim-test'                                       " Add test running
 
 " Ruby
 Plug 'tpope/vim-rbenv'                                        " Use rbenv for Ruby tools
+Plug 'tpope/vim-endwise',              {'for': 'ruby'}        " Automatically insert programming block endings (ie. `end` in Ruby, `endif` in VimL)
 Plug 'ecomba/vim-ruby-refactoring',    {'for': 'ruby'}        " Extra Ruby refactoring tools
 Plug 'vim-scripts/rubycomplete.vim',   {'for': 'ruby'}        " Extend OmniComplete with live evaluated Ruby
 

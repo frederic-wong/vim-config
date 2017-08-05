@@ -71,7 +71,6 @@ Plug 'janko-m/vim-test'                                       " Add test running
 " Ruby
 Plug 'tpope/vim-rbenv'                                        " Use rbenv for Ruby tools
 Plug 'ecomba/vim-ruby-refactoring',    {'for': 'ruby'}        " Extra Ruby refactoring tools
-Plug 'nelstrom/vim-textobj-rubyblock', {'for': 'ruby'}        " Extend % to match Ruby syntax
 Plug 'vim-scripts/rubycomplete.vim',   {'for': 'ruby'}        " Extend OmniComplete with live evaluated Ruby
 
 " Elixir

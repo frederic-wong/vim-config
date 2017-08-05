@@ -12,7 +12,6 @@ Plug 'vim-airline/vim-airline'                                " Add a nicer stat
 Plug 'vim-airline/vim-airline-themes'                         " Themes for Airline
 Plug 'christoomey/vim-tmux-navigator'                         " Move between Vim panes & Tmux panes easily
 Plug 'vim-scripts/colorizer'                                       " Show the colour off Hex colour codes
-Plug 'luochen1990/rainbow'                                    " Colour in brachets in matching pairs
 Plug 'mhinz/vim-startify'                                     " Start Vim with a more useful start screen
 Plug 'nathanaelkane/vim-indent-guides'                        " Show indentation level guides
 Plug 'regedarek/ZoomWin'                                      " Enable one pane to be fullscreened temporarily
@@ -339,9 +338,6 @@ map <silent> <leader>i  mzgg=G`z
 " <Leader>I to reindent the current file
 map <silent> <leader>I  gggqG
 
-" Rainbow colour parens and brachets to see what matches and which levels
-map <silent> <leader>) :RainbowToggle<CR>
-
 "  <Leader>m to toggle file tree (,M to select the current file in the tree)
 nmap <silent> <Leader>m :NERDTreeToggle<CR>
 
@@ -648,37 +644,6 @@ let g:gitgutter_max_signs = 1000
 if !empty($TMUX)
   let test#strategy = "dispatch"
 end
-
-" ----------------------------------------------
-" Configure Rainbow Parentheses
-" ----------------------------------------------
-
-let g:rainbow_active = 0
-
-let g:rainbow_conf = {
-    \   'guifgs':   ['white', '#005fff', '#8700ff', '#af00af', '#af005f'],
-    \   'ctermfgs': ['white', '27',      '93',      '127',     '125'],
-    \   'separately':{
-    \     'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/'],
-    \     'vim': {
-    \        'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
-    \      },
-    \      'xml': {
-    \        'parentheses': ['start=/\v\<\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'))?)*\>/ end=#</\z1># fold'],
-    \      },
-    \      'xhtml': {
-    \        'parentheses': ['start=/\v\<\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'))?)*\>/ end=#</\z1># fold'],
-    \      },
-    \      'html': {
-    \        'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
-    \      },
-    \      'ruby': {
-    \        'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold' ],
-    \      },
-    \      '*': {}
-    \   }
-    \ }
-
 
 " ----------------------------------------------
 " Setup FZF colours

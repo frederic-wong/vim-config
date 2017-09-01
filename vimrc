@@ -57,6 +57,7 @@ Plug 'dhruvasagar/vim-table-mode'                             " Add some pretty 
 Plug 'ervandew/supertab'                                      " Make tab more useful in triggering Vim omni-complete
 Plug 'tpope/vim-ragtag'                                       " Provide bindings for closing HTML/XML tags
 Plug 'ajh17/VimCompletesMe'                                   " Very lightweight completion helper
+Plug 'noahfrederick/vim-skeleton'                             " Use a template file when creating new files
 
 " Snippets
 Plug 'SirVer/ultisnips'                                       " Add snippet expantion for all kinds of template formats
@@ -519,6 +520,31 @@ let g:UltiSnipsExpandTrigger = "<C-j>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
+
+" ----------------------------------------------
+" File template settings
+" ----------------------------------------------
+
+let g:skeleton_replacements_ruby = {}
+
+function! g:skeleton_replacements_ruby.CLASSNAME()
+  let l:basename  = expand('%:t:r')
+  let l:filename  = substitute(l:basename, "_spec", "", "")
+  let l:camelcase = substitute(l:filename, '_\(\l\)', '\u\1', 'g')
+  let l:mixedcase = substitute(l:camelcase, '^.', '\u&', '')
+  return l:mixedcase
+endfunction
+
+let g:skeleton_find_template = {}
+
+function! g:skeleton_find_template.ruby(path)
+  if stridx(a:path, 'spec/') != -1
+    return 'spec.rb'
+  elseif stridx(a:path, '/controllers/') != -1
+    return 'controller.rb'
+  endif
+  return ''
+endfunction
 
 " ----------------------------------------------
 " Copy file path details to the system clipboard

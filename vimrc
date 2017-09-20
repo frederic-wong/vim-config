@@ -713,16 +713,20 @@ let g:switch_custom_definitions =
 " Setup the status bar
 " ----------------------------------------------
 
-let g:airline_left_sep = ""
-let g:airline_left_alt_sep = ""
-let g:airline_right_sep = ""
-let g:airline_right_alt_sep = ""
-let g:airline_section_z = '%c, %l/%L'
+" Set POWERLINE in your env to active powerline-font support
+" for example, in your .bashrc add:
+" export POWERLINE=1
+
+if $POWERLINE
+  let g:airline_powerline_fonts = 1
+  let g:airline#extensions#tagbar#enabled = 1
+else
+  let g:airline_section_z = '%c, %l/%L'
+  let g:airline#extensions#tagbar#enabled = 0
+end
 
 let g:airline#extensions#whitespace#enabled = 0
-let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#hunks#enabled = 1
-let g:airline#extensions#tagbar#enabled = 0
 
 let g:airline_theme = "kalisi"
 

@@ -59,6 +59,11 @@ A large number of the useful commands in Vim start with the 'leader' key, so Vim
 
 For this config, the leader is the comma button. This is shown in the following notes as `<space>`
 
+## Powerline
+This config comes ready to use either with or without a Powerline patched font. As detecting the powerline characters is pretty much impossible, you can enable this by setting `POWERLINE=1` in your shell (ie. in `~/.bashrc` or `~/.zshrc`).
+Note that this is *off* by default.
+
+
 ## Plugins - all the goodies!
 
 There is no replacement for having a look through the config and seeing which plugins are installed and which key bindings are set. However, that can be a bit daunting, so here are the highlights!

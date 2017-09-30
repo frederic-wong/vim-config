@@ -287,6 +287,13 @@ if executable('fzf')
 
   "  <Leader>} to Search for a tag in the current project
   map <silent> <leader>} :Tags<cr>
+
+  " Add <leader>/ to search all files via Ag
+  nnoremap <silent> <leader>/ :execute 'Ag ' . input('Ag search: ')<CR>
+
+  " Augment line completion with Ag menu
+  imap <C-x><C-l> <plug>(fzf-complete-line)
+
 else
   "  <Leader>f to fuzzy search files
   map <silent> <leader>f :CtrlP<cr>
@@ -636,8 +643,6 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
   let g:ctrlp_use_caching = 0
 endif
-
-
 
 " ----------------------------------------------
 " Setup SplitJoin

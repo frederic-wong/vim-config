@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class @CLASSNAME@ < ApplicationController
+class @CLASSNAME@ < ApplicationJob
 
   @CURSOR@
 

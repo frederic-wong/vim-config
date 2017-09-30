@@ -542,6 +542,10 @@ function! g:skeleton_find_template.ruby(path)
     return 'spec.rb'
   elseif stridx(a:path, '/controllers/') != -1
     return 'controller.rb'
+  elseif stridx(a:path, '/model/') != -1
+    return 'model.rb'
+  elseif stridx(a:path, '/worker/') != -1
+    return 'worker.rb'
   endif
   return ''
 endfunction

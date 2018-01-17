@@ -659,7 +659,7 @@ let g:splitjoin_align = 1
 hi clear SignColumn
 
 " Set the Gutter to show all the time, avoiding the column 'pop' when saving
-let g:gitgutter_sign_column_always = 1
+set signcolumn=yes
 let g:gitgutter_sign_added = '+'
 let g:gitgutter_sign_modified = '~'
 let g:gitgutter_sign_removed = '-'
@@ -938,21 +938,6 @@ autocmd BufNewFile,BufRead *.md :setlocal spell
 let g:ansible_options = {'ignore_blank_lines': 0}
 
 let g:javascript_enable_domhtmlcss = 1
-
-" ----------------------------------------------
-" Configure GitGutter
-" ----------------------------------------------
-" Set the git gutter colors to be the same as the number column
-hi clear SignColumn
-
-" Set the Gutter to show all the time, avoiding the column 'pop' when saving
-let g:gitgutter_sign_column_always = 1
-let g:gitgutter_sign_added = '+'
-let g:gitgutter_sign_modified = '~'
-let g:gitgutter_sign_removed = '-'
-let g:gitgutter_sign_modified_removed = '~'
-let g:gitgutter_max_signs = 1000
-
 
 " ----------------------------------------------
 " Configure Testing tools

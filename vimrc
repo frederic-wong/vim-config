@@ -148,7 +148,7 @@ set timeoutlen=500                      " Milliseconds to wait for another key p
 set wildmode=list:longest               " Shell-like behaviour for command autocompletion
 set fillchars+=vert:\                   " Set the window borders to not have | chars in them
 set nojoinspaces                        " Use only 1 space after "." when joining lines instead of 2
-
+set signcolumn=yes                      " Show signcolumn all the time to avoid it popping in when gitgutter wakes up
 
 " Display soft column limit in modern versions of vim
 if version >= 730
@@ -659,7 +659,6 @@ let g:splitjoin_align = 1
 hi clear SignColumn
 
 " Set the Gutter to show all the time, avoiding the column 'pop' when saving
-set signcolumn=yes
 let g:gitgutter_sign_added = '+'
 let g:gitgutter_sign_modified = '~'
 let g:gitgutter_sign_removed = '-'

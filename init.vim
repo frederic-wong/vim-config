@@ -279,6 +279,7 @@ imap jk <esc>
 
 " <leader>. to view all document buffers
 nmap <silent> <unique> <Leader>. :BufExplorer<CR>
+nmap <silent> <unique> ,. :BufExplorer<CR>
 
 " Double leader to switch to the previous buffer
 map <silent> <Leader><Leader> :b#<CR>
@@ -908,6 +909,12 @@ let g:gitgutter_sign_removed = '-'
 let g:gitgutter_sign_modified_removed = '~'
 let g:gitgutter_max_signs = 1000
 
+" ----------------------------------------------
+" Configure Indent guidelines
+" ----------------------------------------------
+
+let g:indentLine_char = '│'
+let g:indentLine_fileType = ['yaml', 'slim']
 
 " ----------------------------------------------
 " Configure Testing tools

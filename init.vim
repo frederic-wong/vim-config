@@ -1,7 +1,7 @@
 set nocompatible
 let vimDir = '$HOME/.config/nvim'
 
-let plugin_dir = expand(vimDir . '/plugged')
+let plugin_dir = expand(vimDir . '/plugins')
 call plug#begin(plugin_dir)
 
 " ----------------------------------------------
@@ -914,7 +914,7 @@ let g:gitgutter_max_signs = 1000
 " ----------------------------------------------
 
 let g:indentLine_char = '│'
-let g:indentLine_fileType = ['yaml', 'slim']
+let g:indentLine_fileType = ['yaml', 'slim', 'coffee', 'python']
 
 " ----------------------------------------------
 " Configure Testing tools

@@ -13,7 +13,7 @@ Plug 'vim-airline/vim-airline-themes'                         " Themes for Airli
 Plug 'christoomey/vim-tmux-navigator'                         " Move between Vim panes & Tmux panes easily
 Plug 'vim-scripts/colorizer'                                  " Show the colour off Hex colour codes
 Plug 'mhinz/vim-startify'                                     " Start Vim with a more useful start screen
-Plug 'nathanaelkane/vim-indent-guides'                        " Show indentation level guides
+Plug 'Yggdroot/indentLine'                                    " Show indentation level guides
 Plug 'regedarek/ZoomWin'                                      " Enable one pane to be fullscreened temporarily
 Plug 'sjl/gundo.vim'                                          " Visualise the undo tree and make it easy to navigate
 Plug 'tpope/vim-repeat'                                       " Make many more operations repeatable with `.`
@@ -341,6 +341,9 @@ map <silent> <leader>i  mzgg=G`z
 " <Leader>I to reindent the current file
 map <silent> <leader>I  gggqG
 
+" <Leader>ig to toggle indent guidelines
+map <silent> <leader>ig :IndentLinesToggle<CR>
+
 "  <Leader>m to toggle file tree (,M to select the current file in the tree)
 nmap <silent> <Leader>m :NERDTreeToggle<CR>
 
@@ -380,6 +383,11 @@ nnoremap <Leader>] :TagbarToggle<CR>
 
 " Add :w!! to save the current file with sudo
 cmap w!! w !sudo tee > /dev/null %
+
+" Make saving & quiting just that little bit quicker
+noremap <silent> <leader>w :w<CR>
+noremap <silent> <leader>x :x<CR>
+noremap <silent> <leader>q :q<CR>
 
 "  <Leader>z to zoom pane when using splits
 map <Leader>z :ZoomWin<CR>
@@ -938,6 +946,15 @@ let g:ansible_options = {'ignore_blank_lines': 0}
 
 let g:javascript_enable_domhtmlcss = 1
 
+
+" ----------------------------------------------
+" Configure Indent guidelines
+" ----------------------------------------------
+
+let g:indentLine_char = '│'
+let g:indentLine_fileType = ['yaml', 'slim']
+
+
 " ----------------------------------------------
 " Configure Testing tools
 " ----------------------------------------------
@@ -1024,7 +1041,7 @@ command! -nargs=0 Hipster :normal iTrust fund fashion axe bitters art party
 " ----------------------------------------------
 "  Source any local config
 "  Keep this last to make sure local config overrides global!
-" ----------------------------------------------
+
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif

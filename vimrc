@@ -482,6 +482,8 @@ let g:vim_markdown_folding_disabled=1
 " YAML -------------------------------------
 " Ignore blank lines when calculating indentaiton on ansible yml configs
 let g:ansible_options = {'ignore_blank_lines': 0}
+autocmd BufNewFile,BufRead *.yml :setlocal cursorcolumn
+autocmd BufNewFile,BufRead *.yaml :setlocal cursorcolumn
 
 " MAKE -------------------------------------
 " Leave tabs as tabs in Makefiles
@@ -510,6 +512,8 @@ let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 " Enable ragtag XML tag mappings
 let g:ragtag_global_maps = 1
 
+" Slim -------------------------------------
+autocmd BufNewFile,BufRead *.slim :setlocal cursorcolumn
 
 " ----------------------------------------------
 " Auto-complete shortcuts

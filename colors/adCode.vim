@@ -24,6 +24,7 @@ hi LineNr                     guifg=#535969 ctermfg=240  guibg=#191931 ctermbg=2
 hi Cursor                     guifg=#FAFAFA ctermfg=231  guibg=#646464 ctermbg=241  gui=NONE cterm=NONE
 hi CursorLine                 guifg=NONE    ctermfg=NONE guibg=#242424 ctermbg=235  gui=NONE cterm=NONE
 hi CursorLineNr               guifg=#FFFF40 ctermfg=227  guibg=#3C414C ctermbg=238  gui=NONE cterm=NONE
+hi CursorColumn               guifg=NONE    ctermfg=NONE guibg=#303030 ctermbg=236  gui=NONE cterm=NONE
 hi Search                     guifg=#101020 ctermfg=233  guibg=#FFC86B ctermbg=221  gui=ITALIC,BOLD cterm=NONE
 hi MatchParen                 guifg=#FFC86B ctermfg=221  guibg=#101020 ctermbg=233  gui=BOLD cterm=BOLD
 hi SignColumn                 guifg=#FAFAFA ctermfg=231  guibg=#191931 ctermbg=234  gui=NONE cterm=NONE

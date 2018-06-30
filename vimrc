@@ -123,12 +123,14 @@ set autowrite                           " Writes on make/shell commands
 set background=dark
 set backspace=start,indent,eol
 set backupdir=/var/tmp,~/.tmp,.         " Don't clutter project dirs up with swap files
+set breakindent
 set cf                                  " Enable error files & error jumping.
 set complete+=kspell
 set cursorline                          " Hilight the line the cursor is on
 set directory=/var/tmp,~/.tmp,.
 set expandtab                           " Convert tabs to spaces AS IS RIGHT AND PROPER
 set fillchars+=vert:\                   " Set the window borders to not have | chars in them
+set formatoptions+=j
 set hidden                              " Allow buffer switching without saving
 set history=1000                        " Remember a decent way back
 set laststatus=2                        " Always show status line.
@@ -143,6 +145,7 @@ set scrolloff=3                         " More context around cursor
 set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
 set shiftwidth=2
 set shortmess+=A
+set showbreak=↪                         " Show nicer symbol when a line is being wrapped
 set signcolumn=yes                      " Show signcolumn all the time to avoid it popping in when gitgutter wakes up
 set smarttab
 set spelllang=en_gb

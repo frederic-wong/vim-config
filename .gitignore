@@ -11,5 +11,7 @@ bundle/*
 !bundle/Vundle.vim/*
 plugged/*
 !plugged/.gitkeep
+plugins/*
+!plugins/.gitkeep
 undo_data/*
 !undo_data/.gitkeep

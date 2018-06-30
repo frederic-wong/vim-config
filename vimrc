@@ -1,5 +1,8 @@
 set nocompatible
-call plug#begin('~/.vim/plugged')
+let vimDir = '$HOME/.vim'
+
+let plugin_dir = expand(vimDir . '/plugged')
+call plug#begin(plugin_dir)
 
 " ----------------------------------------------
 " Define all the plugins!
@@ -91,7 +94,6 @@ endif
 " No More plugins after here thanks!
 
 call plug#end()
-let vimDir = '$HOME/.vim'
 
 syntax on
 filetype on

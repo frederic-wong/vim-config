@@ -91,6 +91,8 @@ endif
 " No More plugins after here thanks!
 
 call plug#end()
+let vimDir = '$HOME/.vim'
+
 syntax on
 filetype on
 filetype indent on
@@ -118,20 +120,22 @@ endif
 
 set autoindent                          " Automatically indent based on syntax detection
 set autowrite                           " Writes on make/shell commands
+set background=dark
 set backspace=start,indent,eol
 set backupdir=/var/tmp,~/.tmp,.         " Don't clutter project dirs up with swap files
-set background=dark
-set directory=/var/tmp,~/.tmp,.
 set cf                                  " Enable error files & error jumping.
 set complete+=kspell
 set cursorline                          " Hilight the line the cursor is on
+set directory=/var/tmp,~/.tmp,.
 set expandtab                           " Convert tabs to spaces AS IS RIGHT AND PROPER
+set fillchars+=vert:\                   " Set the window borders to not have | chars in them
 set hidden                              " Allow buffer switching without saving
 set history=1000                        " Remember a decent way back
 set laststatus=2                        " Always show status line.
 set listchars=nbsp:█,eol:¶,tab:>-,extends:»,precedes:«,trail:•
 set mousehide                           " Hide the mouse cursor when typing
 set nofoldenable                        " Disable all folding of content
+set nojoinspaces                        " Use only 1 space after "." when joining lines instead of 2
 set nowrap                              " Line wrapping off
 set number                              " line numbers
 set ruler                               " Ruler on
@@ -139,6 +143,7 @@ set scrolloff=3                         " More context around cursor
 set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
 set shiftwidth=2
 set shortmess+=A
+set signcolumn=yes                      " Show signcolumn all the time to avoid it popping in when gitgutter wakes up
 set smarttab
 set spelllang=en_gb
 set statusline=%<%f\ %h%m%r%=%-20.(line=%l\ of\ %L,col=%c%V%)\%h%m%r%=%-40(,%n%Y%)\%P%#warningmsg#%{SyntasticStatuslineFlag()}%*
@@ -146,9 +151,13 @@ set t_Co=256                            " Set 256 colour mode
 set tabstop=2                           " Make a tab = 2 spaces
 set timeoutlen=500                      " Milliseconds to wait for another key press when evaluating commands
 set wildmode=list:longest               " Shell-like behaviour for command autocompletion
-set fillchars+=vert:\                   " Set the window borders to not have | chars in them
-set nojoinspaces                        " Use only 1 space after "." when joining lines instead of 2
-set signcolumn=yes                      " Show signcolumn all the time to avoid it popping in when gitgutter wakes up
+
+" Set undo data so it persists between sessions
+if has('persistent_undo')
+  let undo_dir = expand(vimDir . '/undo_data')
+  let &undodir = undo_dir
+  set undofile
+endif
 
 " Display soft column limit in modern versions of vim
 if version >= 730
@@ -163,9 +172,9 @@ if v:version > 704 || v:version == 704 && has("patch338")
 endif
 
 " Delete comment character when joining commented lines
- if v:version > 703 || v:version == 703 && has("patch541")
-   set formatoptions+=j
- endif
+if v:version > 703 || v:version == 703 && has("patch541")
+  set formatoptions+=j
+endif
 
 " -----------------------------------
 " Setup file wildcard ignored names
@@ -691,18 +700,18 @@ end
 " ----------------------------------------------
 
 let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'String'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Boolean'],
-  \ 'info':    ['fg', 'Comment'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
+      \ { 'fg':      ['fg', 'Normal'],
+      \ 'bg':      ['bg', 'Normal'],
+      \ 'hl':      ['fg', 'String'],
+      \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+      \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+      \ 'hl+':     ['fg', 'Boolean'],
+      \ 'info':    ['fg', 'Comment'],
+      \ 'prompt':  ['fg', 'Conditional'],
+      \ 'pointer': ['fg', 'Exception'],
+      \ 'marker':  ['fg', 'Keyword'],
+      \ 'spinner': ['fg', 'Label'],
+      \ 'header':  ['fg', 'Comment'] }
 
 " ----------------------------------------------
 " Configure dynamic code execution tools
@@ -724,10 +733,10 @@ let g:projectionist_heuristics ={
 
 
 let g:switch_custom_definitions =
-    \ [
-    \   ['X', '✔', '✕'],
-    \   ['yes', 'no']
-    \ ]
+      \ [
+      \   ['X', '✔', '✕'],
+      \   ['yes', 'no']
+      \ ]
 
 " ----------------------------------------------
 " Setup the status bar
@@ -777,55 +786,55 @@ endif
 let g:gutentags_ctags_tagfile = '.tags'
 
 let g:tagbar_type_ansible = {
-\   'ctagstype' : 'ansible',
-\   'kinds' : [
-\     't:tasks'
-\   ],
-\   'sort' : 0
-\ }
+      \   'ctagstype' : 'ansible',
+      \   'kinds' : [
+      \     't:tasks'
+      \   ],
+      \   'sort' : 0
+      \ }
 
 let g:tagbar_type_css = {
-\ 'ctagstype' : 'Css',
-\   'kinds'     : [
-\     'c:classes',
-\     's:selectors',
-\     'i:identities'
-\   ]
-\ }
+      \ 'ctagstype' : 'Css',
+      \   'kinds'     : [
+      \     'c:classes',
+      \     's:selectors',
+      \     'i:identities'
+      \   ]
+      \ }
 
 let g:tagbar_type_elixir = {
-\ 'ctagstype' : 'elixir',
-\ 'kinds' : [
-\   'f:functions',
-\   'functions:functions',
-\   'c:callbacks',
-\   'd:delegates',
-\   'e:exceptions',
-\   'i:implementations',
-\   'a:macros',
-\   'o:operators',
-\   'm:modules',
-\   'p:protocols',
-\   'r:records'
-\ ]
-\ }
+      \ 'ctagstype' : 'elixir',
+      \ 'kinds' : [
+      \   'f:functions',
+      \   'functions:functions',
+      \   'c:callbacks',
+      \   'd:delegates',
+      \   'e:exceptions',
+      \   'i:implementations',
+      \   'a:macros',
+      \   'o:operators',
+      \   'm:modules',
+      \   'p:protocols',
+      \   'r:records'
+      \ ]
+      \ }
 
 let g:tagbar_type_ruby = {
-\   'kinds' : [
-\     'm:modules',
-\     'c:classes',
-\     'd:describes',
-\     'c:contexts',
-\     'C:constants',
-\     'f:methods',
-\     'F:singleton methods',
-\     's:specs',
-\     'S:scopes',
-\     'a:associations',
-\     'r:relations',
-\     'h:callbacks',
-\   ]
-\ }
+      \   'kinds' : [
+      \     'm:modules',
+      \     'c:classes',
+      \     'd:describes',
+      \     'c:contexts',
+      \     'C:constants',
+      \     'f:methods',
+      \     'F:singleton methods',
+      \     's:specs',
+      \     'S:scopes',
+      \     'a:associations',
+      \     'r:relations',
+      \     'h:callbacks',
+      \   ]
+      \ }
 
 " ----------------------------------------------
 " Setup NERDTree
@@ -1020,7 +1029,7 @@ function! <SID>SynStack()
     return
   endif
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
+endfunction
 
 "define :Lorem command to dump in a paragraph of lorem ipsum
 command! -nargs=0 Lorem :normal iLorem ipsum dolor sit amet, consectetur

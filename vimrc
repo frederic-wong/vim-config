@@ -33,7 +33,7 @@ if executable('fzf')
 else
   Plug 'ctrlpvim/ctrlp.vim'                                     " Really powerful fuzzy finder for file names
 end
-Plug 'rking/ag.vim'                                           " Really fast search for text in all files
+Plug 'dyng/ctrlsf.vim'                                        " Aysnc search for text in all files
 Plug 'scrooloose/nerdtree'                                    " Visualise the project directory and make it easy to navigate
 Plug 'tpope/vim-unimpaired'                                   " Extra bindings for common buffer navigation
 Plug 'timakro/vim-searchant'                                  " Better highlighting when searching in file
@@ -312,12 +312,12 @@ else
   "  <Leader>f to fuzzy search files
   map <silent> <leader>f :CtrlP<cr>
 
-  "  <Leader>F to fuzzy search files in the same directory as the current file
-  map <silent> <leader>F :CtrlPCurFile<cr>
-
   "  <Leader>} to Search for a tag in the current project
   map <silent> <leader>} :CtrlPTag<cr>
 end
+
+"  <Leader>F to fuzzy search files for the given text
+map <silent> <leader>F <Plug>CtrlSFPrompt
 
 "  <Leader>g to jump to the next change since git commit
 nmap <leader>g <Plug>GitGutterNextHunk
@@ -421,7 +421,8 @@ endif
 " Replace the default U (undo last line) to Redo for speedyness
 nmap U <c-r>
 
-nmap <leader>* :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+" Map <leader>* to search for the current work under the cursor in all files
+nmap <leader>* <Plug>CtrlSFCwordExec
 
 " F5 to reload doc
 map <silent> <F5> <esc>:e %<CR>
@@ -617,7 +618,7 @@ nnoremap <C-n> :call NumberToggle()<cr>
 
 " Setup vim-startify's start screen
 let g:startify_change_to_vcs_root = 1
-let g:startify_files_number = 6
+let g:startify_files_number = 8
 let g:startify_custom_header = [
       \ '   __      __            ',
       \ '   \ \    / (_)          ',
@@ -669,6 +670,14 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
   let g:ctrlp_use_caching = 0
 endif
+
+" ----------------------------------------------
+" Setup CtrlSF Text finder
+" ----------------------------------------------
+
+let g:ctrlsf_position = 'bottom'
+let g:ctrlsf_populate_qflist = 1
+
 
 " ----------------------------------------------
 " Setup SplitJoin

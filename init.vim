@@ -80,6 +80,10 @@ Plug 'sheerun/vim-polyglot'                                   " Currated group o
 Plug 'niquola/vim-hl7',                {'for': 'hl7'}         " HL7 syntax highlighting
 Plug 'slashmili/alchemist.vim'                                " Hook into Elixir Alchemist server for better completions'
 Plug 'janko-m/vim-test'                                       " Add test running support for lots of languages & test frameworks
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 
 " Ruby
 Plug 'tpope/vim-rbenv'                                        " Use rbenv for Ruby tools
@@ -565,6 +569,12 @@ autocmd BufEnter * call ncm2#enable_for_buffer()
 
 " note that must keep noinsert in completeopt, the others is optional
 set completeopt=noinsert,menuone,noselect
+
+" Setup language server support
+
+let g:LanguageClient_serverCommands = {
+    \ 'ruby': ['solargraph', 'stdio'],
+    \ }
 
 " ----------------------------------------------
 " File template settings

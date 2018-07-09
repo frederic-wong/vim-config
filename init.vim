@@ -57,10 +57,16 @@ Plug 'wellle/targets.vim'                                     " Add lots of extr
 Plug 'dhruvasagar/vim-table-mode'                             " Add some pretty powerful tools for creating ASCII tables
 
 " Autocomplete
-Plug 'roxma/nvim-completion-manager'                          " Add auto-complete
+Plug 'ncm2/ncm2'                                              " Add auto-complete
+Plug 'roxma/nvim-yarp'                                        " Allow Autocomplete to run async
+Plug 'ncm2/ncm2-bufword'                                      " Complete based on words in buffers
+Plug 'ncm2/ncm2-tmux'                                         " Complete based on words in tmux
+Plug 'ncm2/ncm2-path'                                         " Complete based on paths
+Plug 'ncm2/ncm2-cssomni'                                      " Complete based on CSS keywords
+Plug 'ncm2/ncm2-ultisnips'                                    " Complete based on Snippets
 Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}             " Auto-complete JS
 Plug 'roxma/ncm-rct-complete'                                 " Auto-complete Ruby
-Plug 'othree/csscomplete.vim'                                 " Auto-complete CSS
+
 Plug 'jiangmiao/auto-pairs'                                   " Auto add paired characters (and try not to be too annoying about it)
 Plug 'noahfrederick/vim-skeleton'                             " Use a template file when creating new files
 
@@ -525,7 +531,6 @@ autocmd BufNewFile,BufRead *.slim :setlocal cursorcolumn
 " ----------------------------------------------
 " Auto-complete
 " ----------------------------------------------
-let g:deoplete#enable_at_startup = 1
 
 " Enable omni completion.
 autocmd FileType ruby,eruby setlocal omnifunc=rubycomplete#Complete
@@ -539,35 +544,27 @@ autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby setlocal omnifunc=rubycomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
-
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
   return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
-  " For no inserting <CR> key.
-  "return pumvisible() ? "\<C-y>" : "\<CR>"
 endfunction
 
 " <TAB>: completion.
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-" Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<C-x>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
+" Enable NCM2
+autocmd BufEnter * call ncm2#enable_for_buffer()
+
+" note that must keep noinsert in completeopt, the others is optional
+set completeopt=noinsert,menuone,noselect
 
 " ----------------------------------------------
 " File template settings

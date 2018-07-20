@@ -1,7 +1,13 @@
 set nocompatible
-let vimDir = '$HOME/.config/nvim'
 
-let plugin_dir = expand(vimDir . '/plugins')
+if has("nvim")
+  let vimDir = '$HOME/.config/nvim'
+  let plugin_dir = expand(vimDir . '/plugins')
+else
+  let vimDir = '$HOME/.vim'
+  let plugin_dir = expand(vimDir . '/plugged')
+endif
+
 call plug#begin(plugin_dir)
 
 " ----------------------------------------------
@@ -57,15 +63,21 @@ Plug 'wellle/targets.vim'                                     " Add lots of extr
 Plug 'dhruvasagar/vim-table-mode'                             " Add some pretty powerful tools for creating ASCII tables
 
 " Autocomplete
-Plug 'ncm2/ncm2'                                              " Add auto-complete
-Plug 'roxma/nvim-yarp'                                        " Allow Autocomplete to run async
-Plug 'ncm2/ncm2-bufword'                                      " Complete based on words in buffers
-Plug 'ncm2/ncm2-tmux'                                         " Complete based on words in tmux
-Plug 'ncm2/ncm2-path'                                         " Complete based on paths
-Plug 'ncm2/ncm2-cssomni'                                      " Complete based on CSS keywords
-Plug 'ncm2/ncm2-ultisnips'                                    " Complete based on Snippets
-Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}             " Auto-complete JS
-Plug 'roxma/ncm-rct-complete'                                 " Auto-complete Ruby
+if has("nvim")
+  Plug 'ncm2/ncm2'                                              " Add auto-complete
+  Plug 'roxma/nvim-yarp'                                        " Allow Autocomplete to run async
+  Plug 'ncm2/ncm2-bufword'                                      " Complete based on words in buffers
+  Plug 'ncm2/ncm2-tmux'                                         " Complete based on words in tmux
+  Plug 'ncm2/ncm2-path'                                         " Complete based on paths
+  Plug 'ncm2/ncm2-cssomni'                                      " Complete based on CSS keywords
+  Plug 'ncm2/ncm2-ultisnips'                                    " Complete based on Snippets
+  Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}             " Auto-complete JS
+  Plug 'roxma/ncm-rct-complete'                                 " Auto-complete Ruby
+else
+  Plug 'ervandew/supertab'                                      " Make tab more useful in triggering Vim omni-complete
+  Plug 'tpope/vim-ragtag'                                       " Provide bindings for closing HTML/XML tags
+  Plug 'ajh17/VimCompletesMe'                                   " Very lightweight completion helper
+endif
 
 Plug 'jiangmiao/auto-pairs'                                   " Auto add paired characters (and try not to be too annoying about it)
 Plug 'noahfrederick/vim-skeleton'                             " Use a template file when creating new files
@@ -75,18 +87,18 @@ Plug 'SirVer/ultisnips'                                       " Add snippet expa
 Plug 'honza/vim-snippets'                                     " Add many popular shared snippets
 
 " Extra syntax highlighting and language support
-Plug 'w0rp/ale'                                               " Syntax highlight & lint multiple languages as you type
+if has("nvim")
+  Plug 'w0rp/ale'                                               " Syntax highlight & lint multiple languages as you type
+  Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' } " Add LanguageServer support for enhanced autocompletion
+else
+  Plug 'scrooloose/syntastic'                                   " The Godfather of all syntax highlighting and checking
+endif
 Plug 'sheerun/vim-polyglot'                                   " Currated group of other excellent plugins
 Plug 'niquola/vim-hl7',                {'for': 'hl7'}         " HL7 syntax highlighting
 Plug 'slashmili/alchemist.vim'                                " Hook into Elixir Alchemist server for better completions'
 Plug 'janko-m/vim-test'                                       " Add test running support for lots of languages & test frameworks
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
 
 " Ruby
-Plug 'tpope/vim-rbenv'                                        " Use rbenv for Ruby tools
 Plug 'tpope/vim-endwise'                                      " Automatically end code blocks as inserted
 Plug 'ecomba/vim-ruby-refactoring',    {'for': 'ruby'}        " Extra Ruby refactoring tools
 Plug 'vim-scripts/rubycomplete.vim',   {'for': 'ruby'}        " Extend OmniComplete with live evaluated Ruby

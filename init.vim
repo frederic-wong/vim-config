@@ -1,6 +1,6 @@
 set nocompatible
 
-if has("nvim")
+if has('nvim')
   let vimDir = '$HOME/.config/nvim'
   let plugin_dir = expand(vimDir . '/plugins')
 else
@@ -63,7 +63,7 @@ Plug 'wellle/targets.vim'                                     " Add lots of extr
 Plug 'dhruvasagar/vim-table-mode'                             " Add some pretty powerful tools for creating ASCII tables
 
 " Autocomplete
-if has("nvim")
+if has('nvim')
   Plug 'ncm2/ncm2'                                              " Add auto-complete
   Plug 'roxma/nvim-yarp'                                        " Allow Autocomplete to run async
   Plug 'ncm2/ncm2-bufword'                                      " Complete based on words in buffers
@@ -87,7 +87,7 @@ Plug 'SirVer/ultisnips'                                       " Add snippet expa
 Plug 'honza/vim-snippets'                                     " Add many popular shared snippets
 
 " Extra syntax highlighting and language support
-if has("nvim")
+if has('nvim')
   Plug 'w0rp/ale'                                               " Syntax highlight & lint multiple languages as you type
   Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' } " Add LanguageServer support for enhanced autocompletion
 else
@@ -140,7 +140,7 @@ map ,, <leader><leader>
 
 " Set our primary colorscheme. Override this in ~/.vim.local if you want.
 colorscheme adCode
-if has("nvim")
+if has('nvim')
   set termguicolors                     " Use nicer colours in nvim
 endif
 
@@ -436,7 +436,7 @@ noremap <silent> <leader>= :ToggleProjectorMode<CR>
 "  <Leader>$ to toggle line wrap
 map <silent> <leader>$ :set wrap!<CR>
 
-if has("gui_running")
+if has('gui_running')
   " Ctrl+s to write the file (would scroll-lock Vim in the terminal!)
   map <C-s> <esc>:w<CR>
   imap <C-s> <esc>:w<CR>
@@ -671,10 +671,17 @@ let g:startify_skiplist = [
       \ 'COMMIT_EDITMSG',
       \ ]
 
-let g:startify_bookmarks = [
-      \ { 'v': '~/.config/nvim/init.vim' },
-      \ { 't': '/tmp/foo.txt' },
-      \ ]
+if has('nvim')
+  let g:startify_bookmarks = [
+        \ { 'v': '~/.config/nvim/init.vim' },
+        \ { 't': '/tmp/foo.txt' },
+        \ ]
+else
+  let g:startify_bookmarks = [
+        \ { 'v': '~/.vim/vimrc' },
+        \ { 't': '/tmp/foo.txt' },
+        \ ]
+endif
 
 " Stop things splitting with Startify and replace it instead
 autocmd User Startified setlocal buftype=
@@ -709,8 +716,6 @@ let g:ctrlsf_populate_qflist = 1
 
 " Attempt alignment of keys when splitting a hash
 let g:splitjoin_align = 1
-
-
 
 " ----------------------------------------------
 " Configure Testing tools

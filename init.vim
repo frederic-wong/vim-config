@@ -566,8 +566,10 @@ imap <C-l> <C-x>
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
-" Enable NCM2
-autocmd BufEnter * call ncm2#enable_for_buffer()
+if has('nvim')
+  " Enable NCM2
+  autocmd BufEnter * call ncm2#enable_for_buffer()
+endif
 
 " note that must keep noinsert in completeopt, the others is optional
 set completeopt=noinsert,menuone,noselect

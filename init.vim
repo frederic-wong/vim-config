@@ -332,10 +332,6 @@ if executable('fzf')
 
   " Add <leader>/ to search all files via Ag
   nnoremap <silent> <leader>/ :execute 'Ag ' . input('Ag search: ')<CR>
-
-  " Augment line completion with Ag menu
-  imap <C-x><C-l> <plug>(fzf-complete-line)
-
 else
   "  <Leader>f to fuzzy search files
   map <silent> <leader>f :CtrlP<cr>
@@ -460,14 +456,6 @@ nmap <F6> :call VimSyntaxGroups()<CR>
 
 
 " ----------------------------------------------
-" Insert Mode Abbreviations
-" ----------------------------------------------
-
-" Try to auto-complete xml tags on typing '</'
-iabbrev </ </<C-X><C-O>
-
-
-" ----------------------------------------------
 " Window split & size shortcuts
 " ----------------------------------------------
 
@@ -574,6 +562,7 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<C-x>"
+imap <C-l> <C-x>
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 

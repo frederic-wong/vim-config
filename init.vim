@@ -108,6 +108,7 @@ Plug 'avdgaag/vim-phoenix',            {'for': 'elixir'}      " Add Projectionis
 
 " JS, CSS & HTML
 Plug 'adamwhittingham/vim-comb',       {'do': './install.sh'} " Organise and format CSS selectors like a proper human
+Plug 'hail2u/vim-css3-syntax'                                 " CSS3 syntax parsing
 
 
 " Load any extra plugins specified in the home directory
@@ -906,14 +907,11 @@ let g:ansible_options = {'ignore_blank_lines': 0}
 
 let g:javascript_enable_domhtmlcss = 1
 
-
-" ----------------------------------------------
-" Configure Indent guidelines
-" ----------------------------------------------
-
-let g:indentLine_char = '│'
-let g:indentLine_fileType = ['yaml', 'slim']
-
+" Fix syntax issues for CSS elements with a dash in the name
+augroup VimCSS3Syntax
+  autocmd!
+  autocmd FileType css setlocal iskeyword+=-
+augroup END
 
 " ----------------------------------------------
 " Configure GitGutter

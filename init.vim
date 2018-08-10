@@ -26,10 +26,6 @@ Plug 'Yggdroot/indentLine'                                    " Show indentation
 Plug 'regedarek/ZoomWin'                                      " Enable one pane to be fullscreened temporarily
 Plug 'sjl/gundo.vim'                                          " Visualise the undo tree and make it easy to navigate
 Plug 'tpope/vim-repeat'                                       " Make many more operations repeatable with `.`
-Plug 'majutsushi/tagbar'                                      " Adds a sidebar menu for tags in the current file
-
-" Tooling
-Plug 'tpope/vim-dispatch'                                     " Enable async running of tasks
 
 " Search and file exploring
 Plug 'jlanzarotta/bufexplorer'                                " Show a sortable list of open buffers
@@ -39,6 +35,7 @@ if executable('fzf')
 else
   Plug 'ctrlpvim/ctrlp.vim'                                     " Really powerful fuzzy finder for file names
 end
+Plug 'mileszs/ack.vim'                                        " Setup Ack to act like Ag
 Plug 'dyng/ctrlsf.vim'                                        " Aysnc search for text in all files
 Plug 'scrooloose/nerdtree'                                    " Visualise the project directory and make it easy to navigate
 Plug 'tpope/vim-unimpaired'                                   " Extra bindings for common buffer navigation
@@ -53,7 +50,6 @@ Plug 'tpope/vim-projectionist'                                " Map tools and ac
 " Extra text manipulation and movement
 Plug 'AndrewRadev/splitjoin.vim'                              " Quick joining or splitting of programming constructs (ie. `if...else...` to `? ... : ...`)
 Plug 'AndrewRadev/switch.vim'                                 " Quickly switch programming constructs between alternate version (ie. Ruby string to symbol)
-Plug 'godlygeek/tabular'                                      " Format lines into a table
 Plug 'junegunn/vim-easy-align'                                " Fast alignment of lines based on preset rules
 Plug 'maxbrunsfeld/vim-yankstack'                             " Paste text, then rotate though things yanked before/after
 Plug 'tpope/vim-commentary'                                   " Quick toggle for code commenting
@@ -63,6 +59,8 @@ Plug 'wellle/targets.vim'                                     " Add lots of extr
 Plug 'dhruvasagar/vim-table-mode'                             " Add some pretty powerful tools for creating ASCII tables
 
 " Autocomplete
+Plug 'jiangmiao/auto-pairs'                                   " Auto add paired characters (and try not to be too annoying about it)
+Plug 'noahfrederick/vim-skeleton'                             " Use a template file when creating new files
 if has('nvim')
   Plug 'ncm2/ncm2'                                              " Add auto-complete
   Plug 'roxma/nvim-yarp'                                        " Allow Autocomplete to run async
@@ -78,9 +76,6 @@ else
   Plug 'tpope/vim-ragtag'                                       " Provide bindings for closing HTML/XML tags
   Plug 'ajh17/VimCompletesMe'                                   " Very lightweight completion helper
 endif
-
-Plug 'jiangmiao/auto-pairs'                                   " Auto add paired characters (and try not to be too annoying about it)
-Plug 'noahfrederick/vim-skeleton'                             " Use a template file when creating new files
 
 " Snippets
 Plug 'SirVer/ultisnips'                                       " Add snippet expantion for all kinds of template formats
@@ -721,14 +716,6 @@ let g:ctrlsf_populate_qflist = 1
 let g:splitjoin_align = 1
 
 " ----------------------------------------------
-" Configure Testing tools
-" ----------------------------------------------
-
-if !empty($TMUX)
-  let test#strategy = "dispatch"
-end
-
-" ----------------------------------------------
 " Setup FZF colours
 " ----------------------------------------------
 
@@ -814,6 +801,14 @@ let g:airline_theme = "kalisi"
 let g:bufExplorerDefaultHelp=1
 let g:bufExplorerDisableDefaultKeyMapping=1
 
+" ----------------------------------------------
+" Setup Ack to act as Ag
+" ----------------------------------------------
+let g:ackprg = 'ag --vimgrep --smart-case'                                                   
+cnoreabbrev ag Ack                                                                           
+cnoreabbrev aG Ack                                                                           
+cnoreabbrev Ag Ack                                                                           
+cnoreabbrev AG Ack  
 
 " ----------------------------------------------
 " Setup ctags

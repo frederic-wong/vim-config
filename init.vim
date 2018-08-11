@@ -35,7 +35,7 @@ if executable('fzf')
 else
   Plug 'ctrlpvim/ctrlp.vim'                                     " Really powerful fuzzy finder for file names
 end
-Plug 'mileszs/ack.vim'                                        " Setup Ack to act like Ag
+Plug 'brookhong/ag.vim'                                       " Add better searching with ag
 Plug 'dyng/ctrlsf.vim'                                        " Aysnc search for text in all files
 Plug 'scrooloose/nerdtree'                                    " Visualise the project directory and make it easy to navigate
 Plug 'tpope/vim-unimpaired'                                   " Extra bindings for common buffer navigation
@@ -800,15 +800,6 @@ let g:airline_theme = "kalisi"
 " ----------------------------------------------
 let g:bufExplorerDefaultHelp=1
 let g:bufExplorerDisableDefaultKeyMapping=1
-
-" ----------------------------------------------
-" Setup Ack to act as Ag
-" ----------------------------------------------
-let g:ackprg = 'ag --vimgrep --smart-case'                                                   
-cnoreabbrev ag Ack                                                                           
-cnoreabbrev aG Ack                                                                           
-cnoreabbrev Ag Ack                                                                           
-cnoreabbrev AG Ack  
 
 " ----------------------------------------------
 " Setup ctags

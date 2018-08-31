@@ -759,6 +759,8 @@ highlight clear ALEWarningSign
 hi ALEErrorSign   guibg=#501010 ctermbg=52 guifg=#FD3F44 ctermfg=203
 hi ALEWarningSign guibg=#503010 ctermbg=58 guifg=#FF9800 ctermfg=208
 
+let b:ale_linters = {'ruby': ['rubocop', 'ruby']}
+
 " ----------------------------------------------
 " Setup customer Switch changes
 " ----------------------------------------------

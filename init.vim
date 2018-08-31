@@ -371,9 +371,6 @@ nmap <silent> <leader>H :set nolist!<CR>
 " <Leader>i to reindent the current file
 map <silent> <leader>i  mzgg=G`z
 
-" <Leader>I to reindent the current file
-map <silent> <leader>I  gggqG
-
 " <Leader>ig to toggle indent guidelines
 map <silent> <leader>ig :IndentLinesToggle<CR>
 

@@ -739,13 +739,12 @@ let g:projectionist_heuristics ={
       \  "spec/*.rb": {
       \     "app/*.rb":                   { "alternate": "spec/{}_spec.rb",                                         "type": "source"},
       \     "app/*.slim":                 { "alternate": "spec/{}.slim_spec.rb",                                    "type": "source"},
-      \     "app/javascript/src/*.js":    { "alternate": "spec/javascript/{}_spec.js",                              "type": "source"},
-      \     "app/javascript/src/*.jsx":   { "alternate": "spec/javascript/{}_spec.jsx",                             "type": "source"},
+      \     "app/javascript/src/*.js":    { "alternate": "spec/javascript/{}.test.js",                              "type": "source"},
+      \     "app/javascript/src/*.jsx":   { "alternate": "spec/javascript/{}.test.js",                              "type": "source"},
       \     "lib/*.rb":                   { "alternate": "spec/{}_spec.rb",                                         "type": "source"},
       \     "spec/views/*.slim_spec.rb":  { "alternate": "app/views/{}.slim",                                       "type": "test"},
       \     "spec/*_spec.rb":             { "alternate": ["app/{}.rb","lib/{}.rb"],                                 "type": "test"},
-      \     "spec/javascript/*_spec.js":  { "alternate": ["app/javascript/src/{}.js", "app/javascript/src/{}.jsx"], "type": "test"},
-      \     "spec/javascript/*_spec.jsx": { "alternate": ["app/javascript/src/{}.js", "app/javascript/src/{}.jsx"], "type": "test"}
+      \     "spec/javascript/*.test.js":  { "alternate": ["app/javascript/src/{}.js", "app/javascript/src/{}.jsx"], "type": "test"},
       \  }
       \}
 

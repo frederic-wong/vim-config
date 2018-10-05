@@ -737,9 +737,11 @@ let g:fzf_colors =
 " Projectionist defaults
 let g:projectionist_heuristics ={
       \  "spec/*.rb": {
-      \     "app/*.rb":       {"alternate": "spec/{}_spec.rb",         "type": "source"},
-      \     "lib/*.rb":       {"alternate": "spec/{}_spec.rb",         "type": "source"},
-      \     "spec/*_spec.rb": {"alternate": ["app/{}.rb","lib/{}.rb"], "type": "test"}
+      \     "app/*.rb":                  { "alternate": "spec/{}_spec.rb",         "type": "source"},
+      \     "app/*.slim":                { "alternate": "spec/{}.slim_spec.rb",    "type": "source"},
+      \     "lib/*.rb":                  { "alternate": "spec/{}_spec.rb",         "type": "source"},
+      \     "spec/views/*.slim_spec.rb": { "alternate": ["app/views/{}.slim"],     "type": "test"},
+      \     "spec/*_spec.rb":            { "alternate": ["app/{}.rb","lib/{}.rb"], "type": "test"}
       \  }
       \}
 

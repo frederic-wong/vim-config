@@ -79,7 +79,7 @@ There is no replacement for having a look through the config and seeing which pl
 | `:A`                       | Toggle between a file and it's 'alternative' (ie. lib file and its unit test file)      |
 | `<leader> /`, then `<something> [subdir]` | Search the whole project for <something>, optionally only in the sub directory [subdir] |
 | `<leader>` `m`             | Toggle the directory tree                                                               |
-| `<leader>` `f`             | Open the directory tree with the current file selected                                  |
+| `<leader>` `M`             | Open the directory tree with the current file selected                                  |
 | `ctrl-]`                   | Jump to function definition (needs exuberant ctags installed)                           |
 
 

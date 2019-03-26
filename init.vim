@@ -45,7 +45,6 @@ Plug 'tpope/vim-unimpaired'                                            " Motions
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}} " Completion engine and languageserver
 Plug 'tpope/vim-surround'                                              " Quick editing or insertion for surrounding characters (ie. quickly add quotes around a line)
 Plug 'tpope/vim-endwise'                                               " Insert `end` into ruby when
-Plug 'SirVer/Ultisnips'                                                " The last word in snippets
 Plug 'honza/vim-snippets'                                              " Add many popular shared snippets
 Plug 'noahfrederick/vim-skeleton'                                      " Load a template when creating some files
 
@@ -105,7 +104,6 @@ set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
 set shortmess+=A
 set showbreak=↪                         " Show nicer symbol when a line is being wrapped
 set signcolumn=yes                      " Show signcolumn all the time to avoid it popping in when gitgutter wakes up
-set smarttab
 set spelllang=en_gb
 set timeoutlen=500                      " Milliseconds to wait for another key press when evaluating commands
 set wildmode=list:longest               " Shell-like behaviour for command autocompletion

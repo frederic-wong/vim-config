@@ -24,12 +24,13 @@ Plug 'tpope/vim-repeat'                                                " Make ma
 
 " Search and file exploring
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }      " Fuzzy search files
-Plug 'junegunn/fzf.vim'                                                " Add nice FZF bindings for tags
+Plug 'junegunn/fzf.vim'                                                " Add nice FZF bindings
 
 " Additional contextual information
 Plug 'AdamWhittingham/vim-copy-filename'                               " Quick shortcuts for copying the file name, path and/or line number
 Plug 'ludovicchabant/vim-gutentags'                                    " Better automated generation and update of ctags files
 Plug 'tpope/vim-projectionist'                                         " Map tools and actions based on the project
+Plug 'RRethy/vim-hexokinase'                                           " Show colour swatches on lines with hex or RGB colours
 
 " Extra text manipulation and movement
 Plug 'AndrewRadev/splitjoin.vim'                                       " Quick joining or splitting of programming constructs (ie. `if...else...` to `? ... : ...`)
@@ -558,8 +559,15 @@ let g:netrw_banner = 0
 let g:netrw_browse_split = 4
 let g:netrw_liststyle = 3
 
-autocmd FileType netrw nnoremap <buffer><silent> q :bd<CR>
-autocmd FileType netrw nnoremap <buffer><silent> u -
+autocmd FileType netrw nnoremap <buffer><silent>q :bd<CR>
+autocmd FileType netrw nnoremap <buffer><silent>a %
+autocmd FileType netrw nnoremap <buffer><silent>u -
+
+" ----------------------------------------------
+" Setup Colour highlighting/swatches
+" ----------------------------------------------
+let g:Hexokinase_ftAutoload = ['css', 'scss', 'sass', 'svg']
+let g:Hexokinase_refreshEvents = ['TextChanged', 'TextChangedI']
 
 " ----------------------------------------------
 " Setup filetype specific settings

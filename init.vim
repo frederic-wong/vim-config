@@ -326,6 +326,9 @@ nmap <leader>* <Plug>CtrlSFCwordExec
 " F5 to reload doc
 map <silent> <F5> <esc>:e %<CR>
 
+" Show all references to the method/variable/etc under the cursor
+nmap <silent> <c-[> <Plug>(coc-references)
+
 " ----------------------------------------------
 " Window split & size shortcuts
 " ----------------------------------------------
@@ -554,7 +557,6 @@ let g:gutentags_ctags_tagfile = '.tags'
 " Setup File exploring
 " ----------------------------------------------
 let g:netrw_banner = 0
-let g:netrw_browse_split = 4
 let g:netrw_liststyle = 3
 
 autocmd FileType netrw nnoremap <buffer><silent>q :bd<CR>

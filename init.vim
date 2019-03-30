@@ -2,11 +2,11 @@ set nocompatible
 
 if has('nvim')
   let vimDir = '$HOME/.config/nvim'
-  let plugin_dir = expand(vimDir . '/plugins')
 else
   let vimDir = '$HOME/.vim'
-  let plugin_dir = expand(vimDir . '/plugged')
 endif
+
+let plugin_dir = expand(vimDir . '/plugins')
 
 call plug#begin(plugin_dir)
 
@@ -77,6 +77,7 @@ let mapleader = " "
 " Set our primary colorscheme. Override this in ~/.vim.local if you want.
 colorscheme adCode
 
+set t_Co=256                            " Use 256-bit colour in vim
 set termguicolors                       " Use nicer colours in nvim
 set autoindent                          " Automatically indent based on syntax detection
 set autowrite                           " Writes on make/shell commands
@@ -86,7 +87,7 @@ set backupdir=/var/tmp,~/.tmp,.         " Don't clutter project dirs up with swa
 set breakindent
 set cf                                  " Enable error files & error jumping.
 set complete+=kspell
-set directory=/var/tmp,~/.tmp,.
+set directory=/var/tmp,~/.tmp,.         " Set the directory for working files created by vim
 set tabstop=2 shiftwidth=2 expandtab    " Convert tabs to 2 spaces AS IS RIGHT AND PROPER
 set fillchars+=vert:\                   " Set the window borders to not have | chars in them
 set formatoptions+=j                    " Delete comment characters when joining lines

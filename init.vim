@@ -40,6 +40,7 @@ Plug 'tpope/vim-commentary'                                            " Quick t
 Plug 'tpope/vim-abolish'                                               " Allow smartcase substitution and search
 Plug 'tpope/vim-surround'                                              " Quick editing or insertion for surrounding characters (ie. quickly add quotes around a line)
 Plug 'tpope/vim-unimpaired'                                            " Motions to quickly add blank lines, move lines and create lists
+Plug 'AndrewRadev/switch.vim'                                          " Quickly swap between true/false, different hash styles and much more
 
 " Autocomplete
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}} " Completion engine and languageserver

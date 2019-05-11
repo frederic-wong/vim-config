@@ -393,6 +393,17 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <c-l> pumvisible() ? "\<C-y>" : "\<c-l>"
 
+call coc#add_extension(
+      \ 'coc-css',
+      \ 'coc-yaml',
+      \ 'coc-json',
+      \ 'coc-ultisnips',
+      \ 'coc-snippets',
+      \ 'coc-lists',
+      \ 'coc-dictionary',
+      \ 'coc-solargraph'
+      \ )
+
 " ----------------------------------------------
 " File template settings
 " ----------------------------------------------

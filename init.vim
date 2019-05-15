@@ -243,6 +243,9 @@ map <silent> <leader>} :Tags<cr>
 "  <Leader>{ to Search for a tag in the current buffer
 map <silent> <leader>{ :BTags<cr>
 
+" Show all references to the method/variable/etc under the cursor
+nmap <silent> <c-]> <Plug>(coc-references)
+
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 vmap a <Plug>(LiveEasyAlign)
 
@@ -328,9 +331,6 @@ nmap <leader>* <Plug>CtrlSFCwordExec
 " F5 to reload doc
 map <silent> <F5> <esc>:e %<CR>
 
-" Show all references to the method/variable/etc under the cursor
-nmap <silent> <c-[> <Plug>(coc-references)
-
 " ----------------------------------------------
 " Window split & size shortcuts
 " ----------------------------------------------
@@ -395,13 +395,14 @@ inoremap <expr> <c-l> pumvisible() ? "\<C-y>" : "\<c-l>"
 
 call coc#add_extension(
       \ 'coc-css',
-      \ 'coc-yaml',
-      \ 'coc-json',
-      \ 'coc-ultisnips',
-      \ 'coc-snippets',
-      \ 'coc-lists',
       \ 'coc-dictionary',
-      \ 'coc-solargraph'
+      \ 'coc-json',
+      \ 'coc-lists',
+      \ 'coc-snippets',
+      \ 'coc-solargraph',
+      \ 'coc-tag',
+      \ 'coc-ultisnips',
+      \ 'coc-yaml'
       \ )
 
 " ----------------------------------------------

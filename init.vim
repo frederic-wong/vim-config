@@ -252,6 +252,10 @@ nmap <silent> <leader>] <Plug>(coc-references)
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 vmap a <Plug>(LiveEasyAlign)
 
+" Format the current file/section
+nmap <c-f> <Plug>(coc-format)
+vmap <c-f> <Plug>(coc-format-selected)
+
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
@@ -284,6 +288,9 @@ map <silent> <leader>i  mzgg=G`z
 
 "  <Leader>m to toggle file tree (,M to select the current file in the tree)
 nmap <silent> <Leader>m :Explore<CR>
+
+" Rename the tag under the cursor
+nmap <leader>r <Plug>(coc-rename)
 
 "  <Leader>rt to run ctags on the current directory
 map <leader>rt :!ctags -R .<CR><CR>

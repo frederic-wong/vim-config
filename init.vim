@@ -243,8 +243,11 @@ map <silent> <leader>} :Tags<cr>
 "  <Leader>{ to Search for a tag in the current buffer
 map <silent> <leader>{ :BTags<cr>
 
+" Jump to the definitionof this tag
+nmap <silent> <c-]> <Plug>(coc-definition)
+
 " Show all references to the method/variable/etc under the cursor
-nmap <silent> <c-]> <Plug>(coc-references)
+nmap <silent> <leader>] <Plug>(coc-references)
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 vmap a <Plug>(LiveEasyAlign)

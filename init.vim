@@ -15,44 +15,44 @@ call plug#begin(plugin_dir)
 " ----------------------------------------------
 
 " UI
-Plug 'airblade/vim-gitgutter'                                          " Show the column of changes to the file against git
-Plug 'christoomey/vim-tmux-navigator'                                  " Move between Vim panes & Tmux panes easily
-Plug 'mhinz/vim-startify'                                              " Start Vim with a more useful start screen
-Plug 'regedarek/ZoomWin'                                               " Enable one pane to be fullscreened temporarily
-Plug 'sjl/gundo.vim'                                                   " Visualise the undo tree and make it easy to navigate
-Plug 'tpope/vim-repeat'                                                " Make many more operations repeatable with `.`
+Plug 'airblade/vim-gitgutter'                                     " Show the column of changes to the file against git
+Plug 'christoomey/vim-tmux-navigator'                             " Move between Vim panes & Tmux panes easily
+Plug 'mhinz/vim-startify'                                         " Start Vim with a more useful start screen
+Plug 'regedarek/ZoomWin'                                          " Enable one pane to be fullscreened temporarily
+Plug 'sjl/gundo.vim'                                              " Visualise the undo tree and make it easy to navigate
+Plug 'tpope/vim-repeat'                                           " Make many more operations repeatable with `.`
 
 " Search and file exploring
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }      " Fuzzy search files
-Plug 'junegunn/fzf.vim'                                                " Add nice FZF bindings
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Fuzzy search files
+Plug 'junegunn/fzf.vim'                                           " Add nice FZF bindings
 
 " Additional contextual information
-Plug 'AdamWhittingham/vim-copy-filename'                               " Quick shortcuts for copying the file name, path and/or line number
-Plug 'ludovicchabant/vim-gutentags'                                    " Better automated generation and update of ctags files
-Plug 'tpope/vim-projectionist'                                         " Map tools and actions based on the project
-Plug 'RRethy/vim-hexokinase'                                           " Show colour swatches on lines with hex or RGB colours
+Plug 'AdamWhittingham/vim-copy-filename'                          " Quick shortcuts for copying the file name, path and/or line number
+Plug 'ludovicchabant/vim-gutentags'                               " Better automated generation and update of ctags files
+Plug 'tpope/vim-projectionist'                                    " Map tools and actions based on the project
+Plug 'RRethy/vim-hexokinase'                                      " Show colour swatches on lines with hex or RGB colours
 
 " Extra text manipulation and movement
-Plug 'AndrewRadev/splitjoin.vim'                                       " Quick joining or splitting of programming constructs (ie. `if...else...` to `? ... : ...`)
-Plug 'junegunn/vim-easy-align'                                         " Fast alignment of lines based on preset rules
-Plug 'maxbrunsfeld/vim-yankstack'                                      " Paste text, then rotate though things yanked before/after
-Plug 'tpope/vim-commentary'                                            " Quick toggle for code commenting
-Plug 'tpope/vim-abolish'                                               " Allow smartcase substitution and search
-Plug 'tpope/vim-surround'                                              " Quick editing or insertion for surrounding characters (ie. quickly add quotes around a line)
-Plug 'tpope/vim-unimpaired'                                            " Motions to quickly add blank lines, move lines and create lists
-Plug 'AndrewRadev/switch.vim'                                          " Quickly swap between true/false, different hash styles and much more
+Plug 'AndrewRadev/splitjoin.vim'                                  " Quick joining or splitting of programming constructs (ie. `if...else...` to `? ... : ...`)
+Plug 'junegunn/vim-easy-align'                                    " Fast alignment of lines based on preset rules
+Plug 'maxbrunsfeld/vim-yankstack'                                 " Paste text, then rotate though things yanked before/after
+Plug 'tpope/vim-commentary'                                       " Quick toggle for code commenting
+Plug 'tpope/vim-abolish'                                          " Allow smartcase substitution and search
+Plug 'tpope/vim-surround'                                         " Quick editing or insertion for surrounding characters (ie. quickly add quotes around a line)
+Plug 'tpope/vim-unimpaired'                                       " Motions to quickly add blank lines, move lines and create lists
+Plug 'AndrewRadev/switch.vim'                                     " Quickly swap between true/false, different hash styles and much more
 
 " Autocomplete
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}} " Completion engine and languageserver
-Plug 'tpope/vim-surround'                                              " Quick editing or insertion for surrounding characters (ie. quickly add quotes around a line)
-Plug 'tpope/vim-endwise'                                               " Insert `end` into ruby when
-Plug 'honza/vim-snippets'                                              " Add many popular shared snippets
-Plug 'noahfrederick/vim-skeleton'                                      " Load a template when creating some files
+Plug 'neoclide/coc.nvim', {'branch': 'release'}                   " Completion engine and languageserver
+Plug 'tpope/vim-surround'                                         " Quick editing or insertion for surrounding characters (ie. quickly add quotes around a line)
+Plug 'tpope/vim-endwise'                                          " Insert `end` into ruby when
+Plug 'honza/vim-snippets'                                         " Add many popular shared snippets
+Plug 'noahfrederick/vim-skeleton'                                 " Load a template when creating some files
 
 " Language specific tools
-Plug 'sheerun/vim-polyglot'                                            " Currated group of other excellent plugins
-Plug 'adamwhittingham/vim-comb',       {'do': './install.sh'}          " Organise and format CSS selectors like a proper human
-Plug 'hail2u/vim-css3-syntax'                                          " CSS3 syntax parsing
+Plug 'sheerun/vim-polyglot'                                       " Currated group of other excellent plugins
+Plug 'adamwhittingham/vim-comb', {'do': './install.sh'}           " Organise and format CSS selectors like a proper human
+Plug 'hail2u/vim-css3-syntax'                                     " CSS3 syntax parsing
 
 
 " Load any extra plugins specified in the home directory

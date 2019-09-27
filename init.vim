@@ -30,7 +30,6 @@ Plug 'junegunn/fzf.vim'                                           " Add nice FZF
 Plug 'AdamWhittingham/vim-copy-filename'                          " Quick shortcuts for copying the file name, path and/or line number
 Plug 'ludovicchabant/vim-gutentags'                               " Better automated generation and update of ctags files
 Plug 'tpope/vim-projectionist'                                    " Map tools and actions based on the project
-Plug 'RRethy/vim-hexokinase'                                      " Show colour swatches on lines with hex or RGB colours
 
 " Extra text manipulation and movement
 Plug 'AndrewRadev/splitjoin.vim'                                  " Quick joining or splitting of programming constructs (ie. `if...else...` to `? ... : ...`)

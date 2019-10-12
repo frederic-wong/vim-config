@@ -258,11 +258,14 @@ vmap <c-f> <Plug>(coc-format-selected)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
+nmap <Leader>gd <Plug>(GitGutterPreviewHunk)
+
 "  <Leader>g to jump to the next change since git commit
-nmap <leader>g <Plug>GitGutterNextHunk
+nmap <leader>gn <Plug>(GitGutterNextHunk)
 
 "  <Leader>G to jump to the last change since git commit
-nmap <leader>G <Plug>GitGutterPrevHunk
+nmap <leader>gp <Plug>(GitGutterPrevHunk)
+nmap <leader>gN <Plug>(GitGutterPrevHunk)
 
 "  <Leader>gt to toggle the gutter
 nmap <leader>gt :GitGutterToggle<CR>
@@ -271,10 +274,11 @@ nmap <leader>gt :GitGutterToggle<CR>
 nmap <leader>gh :GitGutterLineHighlightsToggle<CR>
 
 " <Leager>ga to add the current git hunk to git staging
-nmap <Leader>ga <Plug>GitGutterStageHunk
+nmap <Leader>ga <Plug>(GitGutterStageHunk)
 
 " <Leader>gu to undo the current changed hunk
-nmap <Leader>gu <Plug>GitGutterUndoHunk
+nmap <Leader>gu <Plug>(GitGutterUndoHunk)
+
 
 "  <Leader>h to dismiss search result highlighting until next search or press of 'n'
 :noremap <silent> <leader>h :noh<CR>

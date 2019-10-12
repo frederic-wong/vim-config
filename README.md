@@ -89,12 +89,13 @@ The defeault `<leader>` key is Space.
 | `u`                   | Undo the previous change                                                                                          |
 | `U`                   | Redo (easier than C-r but replaces default 'undo last line')                                                      |
 | `<leader> u`          | Show the undo tree, a super powerful way of undoing changes when you've already undone and changed something else |
-| `<leader> g`          | Skip to the next changed chunk                                                                                    |
-| `<leader> G`          | Skip to the previous changed chunk                                                                                |
+| `<leader> gn`         | Skip to the next changed chunk                                                                                    |
+| `<leader> gP`         | Skip to the previous changed chunk                                                                                |
 | `<leader> gt`         | Toggle the git change gutter                                                                                      |
 | `<leader> gh`         | Highlight all changed lines                                                                                       |
 | `<leader> ga`         | Add this hunk to the stage for the next commit                                                                    |
 | `<leader> gu`         | Undo this hunk (revert it to whatever is in git)                                                                  |
+| `<leader> gd`         | Show the diff of the hunk under the cursor                                                                        |
 
 
 ## Finding things

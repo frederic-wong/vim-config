@@ -279,7 +279,6 @@ nmap <Leader>ga <Plug>(GitGutterStageHunk)
 " <Leader>gu to undo the current changed hunk
 nmap <Leader>gu <Plug>(GitGutterUndoHunk)
 
-
 "  <Leader>h to dismiss search result highlighting until next search or press of 'n'
 :noremap <silent> <leader>h :noh<CR>
 
@@ -313,15 +312,11 @@ nmap <silent> <Leader>sw :call StripTrailingWhitespace()<CR>
 "  <Leader>u to toggle undo history browser
 nnoremap <Leader>u :GundoToggle<CR>
 
-" Replace the default U (undo last line) to Redo for speedyness
-nmap U <c-r>
-
 " Add :w!! to save the current file with sudo
 cmap w!! w !sudo tee > /dev/null %
 
-" Make saving & quiting just that little bit quicker
-noremap <silent> <leader>x :x<CR>
-noremap <silent> <leader>q :q<CR>
+" <leader>y  Show the list of recently yanked snuippets
+nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
 
 "  <Leader>z to zoom pane when using splits
 map <Leader>z :ZoomWin<CR>

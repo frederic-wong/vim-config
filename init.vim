@@ -33,17 +33,16 @@ Plug 'tpope/vim-projectionist'                                    " Map tools an
 
 " Extra text manipulation and movement
 Plug 'AndrewRadev/splitjoin.vim'                                  " Quick joining or splitting of programming constructs (ie. `if...else...` to `? ... : ...`)
+Plug 'AndrewRadev/switch.vim'                                     " Quickly swap between true/false, different hash styles and much more
 Plug 'junegunn/vim-easy-align'                                    " Fast alignment of lines based on preset rules
 Plug 'maxbrunsfeld/vim-yankstack'                                 " Paste text, then rotate though things yanked before/after
 Plug 'tpope/vim-commentary'                                       " Quick toggle for code commenting
 Plug 'tpope/vim-abolish'                                          " Allow smartcase substitution and search
 Plug 'tpope/vim-surround'                                         " Quick editing or insertion for surrounding characters (ie. quickly add quotes around a line)
 Plug 'tpope/vim-unimpaired'                                       " Motions to quickly add blank lines, move lines and create lists
-Plug 'AndrewRadev/switch.vim'                                     " Quickly swap between true/false, different hash styles and much more
 
 " Autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}                   " Completion engine and languageserver
-Plug 'tpope/vim-surround'                                         " Quick editing or insertion for surrounding characters (ie. quickly add quotes around a line)
 Plug 'tpope/vim-endwise'                                          " Insert `end` into ruby when
 Plug 'honza/vim-snippets'                                         " Add many popular shared snippets
 Plug 'noahfrederick/vim-skeleton'                                 " Load a template when creating some files

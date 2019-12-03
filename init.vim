@@ -372,6 +372,10 @@ nmap <leader>P <Plug>yankstack_substitute_newer_paste
 " Setup filetype specific settings
 " ----------------------------------------------
 
+" GIT COMMITS ----------------------------------
+" Start in insert mode when editing a commit message
+au FileType gitcommit 1 | startinsert
+
 " MARKDOWN -------------------------------------
 " Enable spell-check & wrapping when editing text documents (eg Markdown)
 autocmd BufNewFile,BufRead *.md :setlocal wrap

@@ -19,7 +19,7 @@ Plug 'airblade/vim-gitgutter'                                     " Show the col
 Plug 'christoomey/vim-tmux-navigator'                             " Move between Vim panes & Tmux panes easily
 Plug 'mhinz/vim-startify'                                         " Start Vim with a more useful start screen
 Plug 'regedarek/ZoomWin'                                          " Enable one pane to be fullscreened temporarily
-Plug 'sjl/gundo.vim'                                              " Visualise the undo tree and make it easy to navigate
+Plug 'mbbill/undotree'                                            " Visualise the undo tree and make it easy to navigate
 Plug 'tpope/vim-repeat'                                           " Make many more operations repeatable with `.`
 
 " Search and file exploring
@@ -309,7 +309,7 @@ nmap <silent> <Leader>sp :setlocal spell!<CR>
 nmap <silent> <Leader>sw :call StripTrailingWhitespace()<CR>
 
 "  <Leader>u to toggle undo history browser
-nnoremap <Leader>u :GundoToggle<CR>
+nnoremap <Leader>u :UndotreeToggle<CR>
 
 " Add :w!! to save the current file with sudo
 cmap w!! w !sudo tee > /dev/null %

@@ -51,7 +51,7 @@ Plug 'noahfrederick/vim-skeleton'                                 " Load a templ
 Plug 'sheerun/vim-polyglot'                                       " Currated group of other excellent plugins
 Plug 'adamwhittingham/vim-comb', {'do': './install.sh'}           " Organise and format CSS selectors like a proper human
 Plug 'hail2u/vim-css3-syntax'                                     " CSS3 syntax parsing
-
+Plug 'vim-scripts/icalendar.vim'                                  " Syntax for iCal files
 
 " Load any extra plugins specified in the home directory
 if filereadable(expand("~/.vim.plugins.local"))
@@ -605,6 +605,11 @@ let g:javascript_enable_domhtmlcss = 1
 augroup VimCSS3Syntax
   autocmd!
   autocmd FileType css setlocal iskeyword+=-
+augroup END
+
+augroup icalendar_ft
+  au!
+  autocmd BufNewFile,BufRead *.ics   set syntax=icalendar
 augroup END
 
 " ----------------------------------------------

@@ -101,7 +101,7 @@ set nowrap                              " Line wrapping off
 set number                              " line numbers
 set scrolloff=5                         " More context around cursor
 set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
-set shortmess+=A
+set shortmess=aFc
 set showbreak=↪                         " Show nicer symbol when a line is being wrapped
 set signcolumn=yes                      " Show signcolumn all the time to avoid it popping in when gitgutter wakes up
 set spelllang=en_gb

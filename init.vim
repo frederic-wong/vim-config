@@ -487,8 +487,11 @@ nnoremap <C-n> :call NumberToggle()<cr>
 " ----------------------------------------------
 
 " Setup vim-startify's start screen
-let g:startify_change_to_vcs_root = 1
+let g:startify_change_to_vcs_root = 0
+let g:startify_change_to_dir = 0
 let g:startify_files_number = 8
+let g:startify_custom_indices = ['a', 's', 'd']
+
 let g:startify_custom_header = [
       \ '   __      __            ',
       \ '   \ \    / (_)          ',

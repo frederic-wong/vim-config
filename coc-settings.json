@@ -2,5 +2,9 @@
   "solargraph.diagnostics": true,
   "solargraph.autoformat": true,
   "solargraph.formatting": true,
-  "solargraph.hover": true
+  "solargraph.rename": true,
+  "solargraph.definitions": true,
+  "solargraph.hover": true,
+  "solargraph.symbols": true,
+  "solargraph.references": true
 }

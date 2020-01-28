@@ -281,16 +281,16 @@ nmap <Leader>ga <Plug>(GitGutterStageHunk)
 " <Leader>gu to undo the current changed hunk
 nmap <Leader>gu <Plug>(GitGutterUndoHunk)
 
-"  <Leader>h to dismiss search result highlighting until next search or press of 'n'
+" <Leader>h to dismiss search result highlighting until next search or press of 'n'
 :noremap <silent> <leader>h :noh<CR>
 
-"  <Leader>H to show hidden characters
+" <Leader>H to show hidden characters
 nmap <silent> <leader>H :set nolist!<CR>
 
 " <Leader>i to reindent the current file
 map <silent> <leader>i  mzgg=G`z
 
-"  <Leader>m to toggle file tree (,M to select the current file in the tree)
+" <Leader>m to toggle file tree (,M to select the current file in the tree)
 nmap <silent> <Leader>m :Explore<CR>
 
 " Rename the tag under the cursor
@@ -338,8 +338,16 @@ endif
 " Map <leader>* to search for the current work under the cursor in all files
 nmap <leader>* <Plug>CtrlSFCwordExec
 
+" F3 to run rubocop
+map <silent> <F3> <esc>:! rubocop -a %<CR>
+
 " F5 to reload doc
 map <silent> <F5> <esc>:e %<CR>
+
+" F10 to show the syntax group under the cursor
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 " ----------------------------------------------
 " Window split & size shortcuts

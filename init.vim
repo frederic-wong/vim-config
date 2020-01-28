@@ -257,19 +257,22 @@ vmap <c-f> <Plug>(coc-format-selected)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
-nmap <Leader>gd <Plug>(GitGutterPreviewHunk)
+" <leader>gc to show commits in this file
+nmap <Leader>gc :BCommits<cr>
 
-"  <Leader>g to jump to the next change since git commit
+" <Leader>gd to jump to the next change since git commit
+nmap <Leader>gd <Plug>(GitGutterPreviewHunk)
+" <Leader>gn to jump to the next change since git commit
 nmap <leader>gn <Plug>(GitGutterNextHunk)
 
-"  <Leader>G to jump to the last change since git commit
+" <Leader>gp or <leader>gN to jump to the last change since git commit
 nmap <leader>gp <Plug>(GitGutterPrevHunk)
 nmap <leader>gN <Plug>(GitGutterPrevHunk)
 
-"  <Leader>gt to toggle the gutter
+" <Leader>gt to toggle the gutter
 nmap <leader>gt :GitGutterToggle<CR>
 
-"  <Leader>gh highlight changed lines
+" <Leader>gh highlight changed lines
 nmap <leader>gh :GitGutterLineHighlightsToggle<CR>
 
 " <Leager>ga to add the current git hunk to git staging

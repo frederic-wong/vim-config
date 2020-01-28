@@ -18,7 +18,7 @@ if has("gui_running")
     set background=dark
 endif
 
-hi Normal                     guifg=#FAFAFA ctermfg=231  guibg=#0A0A2A ctermbg=NONE gui=NONE cterm=NONE
+hi Normal                     guifg=#FAFAFA ctermfg=231  guibg=#04040A ctermbg=NONE gui=NONE cterm=NONE
 hi Visual                     guifg=NONE    ctermfg=NONE guibg=#3C414C ctermbg=238  gui=NONE cterm=NONE
 hi LineNr                     guifg=#535969 ctermfg=240  guibg=#0F0F3F ctermbg=233  gui=NONE cterm=NONE
 hi Cursor                     guifg=#FAFAFA ctermfg=231  guibg=#646464 ctermbg=241  gui=NONE cterm=NONE

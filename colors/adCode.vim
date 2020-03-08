@@ -39,6 +39,7 @@ hi PMenu                      guifg=#FAFAFA ctermfg=231  guibg=#3C414C ctermbg=2
 hi PMenuSbar                  guifg=NONE    ctermfg=NONE guibg=#3C414C ctermbg=238  gui=NONE cterm=NONE
 hi PMenuSel                   guifg=#FAFAFA ctermfg=231  guibg=#10B0FF ctermbg=39   gui=NONE cterm=NONE
 hi PMenuThumb                 guifg=#0A0A2A ctermfg=232  guibg=#10B0FF ctermbg=39   gui=NONE cterm=NONE
+
 hi StartifyBracket            guifg=#3C414C ctermfg=238  gui=NONE cterm=NONE
 hi StartifyPath               guifg=#10B0FF ctermfg=39   gui=NONE cterm=NONE
 hi StartifySlash              guifg=#3C414C ctermfg=238  gui=NONE cterm=NONE
@@ -47,18 +48,22 @@ hi StartifyFooter             guifg=#3C414C ctermfg=238  gui=NONE cterm=NONE
 hi StartifyHeader             guifg=#60E95C ctermfg=77   gui=NONE cterm=NONE
 hi StartifyNumber             guifg=#FED919 ctermfg=220  gui=NONE cterm=NONE
 hi StartifySpecial            guifg=#89DDFF ctermfg=117  gui=NONE cterm=NONE
+
 hi NERDTreeCWD                guifg=#AFFF4B ctermfg=155  gui=NONE cterm=NONE
 hi NERDTreeDir                guifg=#10B0FF ctermfg=39   gui=NONE cterm=NONE
 hi NERDTreeDirSlash           guifg=#10B0FF ctermfg=39   gui=NONE cterm=NONE
 hi NERDTreeUp                 guifg=#89DDFF ctermfg=117  gui=NONE cterm=NONE
 hi NERDTreeOpenable           guifg=#00A787 ctermfg=36   gui=NONE cterm=NONE
 hi NERDTreeClosable           guifg=#008787 ctermfg=30   gui=NONE cterm=NONE
+
 hi netrwData                  guifg=#10B0FF ctermfg=39   gui=NONE cterm=NONE
 hi netrwSymLink               guifg=#60E95C ctermfg=77   gui=NONE cterm=NONE
+
 hi bufExplorerCurFile         guifg=#89DDFF ctermfg=117  gui=NONE cterm=NONE
 hi bufExplorerAltBuf          guifg=#10B0FF ctermfg=39   gui=NONE cterm=NONE
 hi bufExplorerHelp            guifg=#3C414C ctermfg=238  gui=NONE cterm=NONE
 hi bufExplorerSortBy          guifg=#60E95C ctermfg=77   gui=NONE cterm=NONE
+
 hi GitGutterAdd               guifg=#33FF33 ctermfg=83   guibg=#115511 ctermbg=22   gui=NONE cterm=NONE
 hi GitGutterAddLine           guifg=NONE    ctermfg=NONE guibg=#063806 ctermbg=22   gui=NONE cterm=NONE
 hi GitGutterChange            guifg=#FFFF33 ctermfg=227  guibg=#757500 ctermbg=100  gui=NONE cterm=NONE
@@ -67,6 +72,16 @@ hi GitGutterDelete            guifg=#CF152D ctermfg=160  guibg=#331111 ctermbg=2
 hi GitGutterDeleteLine        guifg=NONE    ctermfg=NONE guibg=#380505 ctermbg=52   gui=NONE cterm=NONE
 hi GitGutterChangeDelete      guifg=#FFFF33 ctermfg=227  guibg=#757500 ctermbg=100  gui=NONE cterm=NONE
 hi GitGutterChangeDeleteLine  guifg=NONE    ctermfg=NONE guibg=#383805 ctermbg=237  gui=NONE cterm=NONE
+
+hi DiffAdd                    guifg=NONE    guibg=#bada9f
+hi DiffChange                 guifg=NONE    guibg=#e5d5ac
+hi DiffDelete                 guifg=#ff8080 guibg=#ffb0b0
+hi DiffText                   guifg=NONE    guibg=#8cbee2
+
+hi DiffAdded                  guifg=NONE    guibg=#20B90C
+hi DiffRemoved                guifg=#ff8080 guibg=#CF152D
+hi DiffChanged                guifg=NONE    guibg=#FED919
+
 hi qfFileName                 guifg=#89DDFF ctermfg=117  gui=NONE cterm=NONE
 hi qfLineNr                   guifg=#FFFF40 ctermfg=227  gui=NONE cterm=NONE
 hi Boolean                    guifg=#FED919 ctermfg=220  gui=NONE cterm=NONE

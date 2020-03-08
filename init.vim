@@ -13,7 +13,6 @@ call plug#begin(plugin_dir)
 " ----------------------------------------------
 
 " UI
-Plug 'airblade/vim-gitgutter'                                     " Show the column of changes to the file against git
 Plug 'christoomey/vim-tmux-navigator'                             " Move between Vim panes & Tmux panes easily
 Plug 'mhinz/vim-startify'                                         " Start Vim with a more useful start screen
 Plug 'regedarek/ZoomWin'                                          " Enable one pane to be fullscreened temporarily
@@ -260,26 +259,20 @@ nmap ga <Plug>(EasyAlign)
 " <leader>gc to show commits in this file
 nmap <Leader>gc :BCommits<cr>
 
-" <Leader>gd to jump to the next change since git commit
-nmap <Leader>gd <Plug>(GitGutterPreviewHunk)
 " <Leader>gn to jump to the next change since git commit
-nmap <leader>gn <Plug>(GitGutterNextHunk)
+nmap <leader>gn <Plug>(coc-git-nextchunk)
 
-" <Leader>gp or <leader>gN to jump to the last change since git commit
-nmap <leader>gp <Plug>(GitGutterPrevHunk)
-nmap <leader>gN <Plug>(GitGutterPrevHunk)
+" <leader>gN to jump to the prev change since git commit
+nmap <leader>gN <Plug>(coc-git-prevchunk)
 
-" <Leader>gt to toggle the gutter
-nmap <leader>gt :GitGutterToggle<CR>
-
-" <Leader>gh highlight changed lines
-nmap <leader>gh :GitGutterLineHighlightsToggle<CR>
+" <Leader>gd to undo the current changed hunk
+nmap <silent> <Leader>gd :CocCommand git.diffCached<CR>
 
 " <Leager>ga to add the current git hunk to git staging
-nmap <Leader>ga <Plug>(GitGutterStageHunk)
+nmap <silent> <Leader>ga :CocCommand git.chunkStage<CR>
 
 " <Leader>gu to undo the current changed hunk
-nmap <Leader>gu <Plug>(GitGutterUndoHunk)
+nmap <silent> <Leader>gu :CocCommand git.chunkUndo<CR>
 
 " <Leader>h to dismiss search result highlighting until next search or press of 'n'
 :noremap <silent> <leader>h :noh<CR>
@@ -382,10 +375,6 @@ nmap <leader>P <Plug>yankstack_substitute_newer_paste
 " ----------------------------------------------
 " Setup filetype specific settings
 " ----------------------------------------------
-
-" GIT COMMITS ----------------------------------
-" Start in insert mode when editing a commit message
-au FileType gitcommit 1 | startinsert
 
 " MARKDOWN -------------------------------------
 " Enable spell-check & wrapping when editing text documents (eg Markdown)

@@ -260,13 +260,13 @@ nmap ga <Plug>(EasyAlign)
 nmap <Leader>gc :BCommits<cr>
 
 " <Leader>gn to jump to the next change since git commit
-nmap <leader>gn <Plug>(coc-git-nextchunk)
+nmap <leader>gn <Plug>(coc-git-nextchunk)<CR>
 
 " <leader>gN to jump to the prev change since git commit
-nmap <leader>gN <Plug>(coc-git-prevchunk)
+nmap <leader>gN <Plug>(coc-git-prevchunk)<CR>
 
-" <Leader>gd to undo the current changed hunk
-nmap <silent> <Leader>gd :CocCommand git.diffCached<CR>
+" <Leader>gd to show details of the current chunk
+nmap <silent> <Leader>gd :CocCommand git.chunkInfo<CR>
 
 " <Leager>ga to add the current git hunk to git staging
 nmap <silent> <Leader>ga :CocCommand git.chunkStage<CR>

@@ -407,6 +407,7 @@ inoremap <expr> <c-l> pumvisible() ? "\<C-y>" : "\<c-l>"
 call coc#add_extension(
       \ 'coc-css',
       \ 'coc-dictionary',
+      \ 'coc-git',
       \ 'coc-json',
       \ 'coc-lists',
       \ 'coc-snippets',

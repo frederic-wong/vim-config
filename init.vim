@@ -1,5 +1,3 @@
-set nocompatible
-
 if has('nvim')
   let vimDir = '$HOME/.config/nvim'
 else
@@ -85,6 +83,7 @@ set backspace=start,indent,eol
 set backupdir=/var/tmp,~/.tmp,.         " Don't clutter project dirs up with swap files
 set breakindent
 set cf                                  " Enable error files & error jumping.
+set cmdheight=2                         " Allow a bit more space for messages
 set complete+=kspell
 set directory=/var/tmp,~/.tmp,.         " Set the directory for working files created by vim
 set tabstop=2 shiftwidth=2 expandtab    " Convert tabs to 2 spaces AS IS RIGHT AND PROPER
@@ -106,6 +105,7 @@ set showbreak=↪                         " Show nicer symbol when a line is bei
 set signcolumn=yes                      " Show signcolumn all the time to avoid it popping in when gitgutter wakes up
 set spelllang=en_gb
 set timeoutlen=500                      " Milliseconds to wait for another key press when evaluating commands
+set updatetime=300                      " Lower the default update time for more speeed
 set wildmode=list:longest               " Shell-like behaviour for command autocompletion
 
 " Set undo data so it persists between sessions
@@ -601,12 +601,6 @@ let g:netrw_liststyle = 3
 autocmd FileType netrw nnoremap <buffer><silent>q :bd<CR>
 autocmd FileType netrw nnoremap <buffer><silent>a %
 autocmd FileType netrw nnoremap <buffer><silent>u -
-
-" ----------------------------------------------
-" Setup Colour highlighting/swatches
-" ----------------------------------------------
-let g:Hexokinase_ftAutoload = ['css', 'scss', 'sass', 'svg']
-let g:Hexokinase_refreshEvents = ['TextChanged', 'TextChangedI']
 
 " ----------------------------------------------
 " Setup filetype specific settings

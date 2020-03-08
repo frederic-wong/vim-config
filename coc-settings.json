@@ -1,15 +1,15 @@
 {
-  "solargraph.diagnostics": true,
-  "solargraph.autoformat": true,
-  "solargraph.formatting": true,
-  "solargraph.rename": true,
-  "solargraph.definitions": true,
-  "solargraph.hover": true,
-  "solargraph.symbols": true,
-  "solargraph.references": true,
   "git.addedSign.hlGroup": "GitGutterAdd",
+  "git.changeRemovedSign.hlGroup": "GitGutterChangeDelete",
   "git.changedSign.hlGroup": "GitGutterChange",
   "git.removedSign.hlGroup": "GitGutterDelete",
   "git.topRemovedSign.hlGroup": "GitGutterDelete",
-  "git.changeRemovedSign.hlGroup": "GitGutterChangeDelete"
+  "solargraph.autoformat": true,
+  "solargraph.definitions": true,
+  "solargraph.diagnostics": true,
+  "solargraph.formatting": true,
+  "solargraph.hover": true,
+  "solargraph.references": true,
+  "solargraph.rename": true,
+  "solargraph.symbols": true
 }

@@ -537,7 +537,7 @@ let g:splitjoin_align = 1
 " Setup FZF
 " ----------------------------------------------
 
-let g:fzf_layout = { 'down': '~75%' }
+let g:fzf_layout = { 'down': '~50%' }
 
 let g:fzf_colors =
       \ {
@@ -556,7 +556,7 @@ let g:fzf_colors =
       \ }
 
 command! -nargs=* Ag
-\ call fzf#vim#ag(<q-args>, fzf#vim#with_preview('up:30%'))
+\ call fzf#vim#ag(<q-args>, fzf#vim#with_preview('right:50%'))
 
 " ----------------------------------------------
 " Configure dynamic code execution tools

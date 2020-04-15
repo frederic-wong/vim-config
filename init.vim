@@ -208,6 +208,9 @@ call yankstack#setup()
 " Command Shortcuts
 " ----------------------------------------------
 
+" Remap jump to mark to M
+noremap M `
+
 " Disable Ex Mode to remove confusion
 nnoremap Q <Nop>
 
@@ -233,6 +236,9 @@ map <silent> <leader>c<space> gcc
 
 "  <Leader>f to fuzzy search files
 map <silent> <leader>f :Files<cr>
+
+"  <Leader>f to fuzzy search files
+map <silent> <leader>F :Explore<cr>
 
 "  <Leader>} to Search for a tag in the current project
 map <silent> <leader>} :Tags<cr>

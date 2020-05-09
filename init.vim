@@ -37,6 +37,7 @@ Plug 'tpope/vim-commentary'                                       " Quick toggle
 Plug 'tpope/vim-abolish'                                          " Allow smartcase substitution and search
 Plug 'tpope/vim-surround'                                         " Quick editing or insertion for surrounding characters (ie. quickly add quotes around a line)
 Plug 'tpope/vim-unimpaired'                                       " Motions to quickly add blank lines, move lines and create lists
+Plug 'kshenoy/vim-signature'                                      " Show marks in the gutter to help me use them more
 
 " Autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}                   " Completion engine and languageserver
@@ -208,7 +209,7 @@ call yankstack#setup()
 " Command Shortcuts
 " ----------------------------------------------
 
-" Remap jump to mark to M
+" Remap jump to mark to M (replaces middle of screen)
 noremap M `
 
 " Disable Ex Mode to remove confusion

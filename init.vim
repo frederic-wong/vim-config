@@ -215,7 +215,7 @@ noremap M `
 " Disable Ex Mode to remove confusion
 nnoremap Q <Nop>
 
-" make W and Q act like w and q
+" make W and Q act like w and q for when I accidentally hold shift too long
 command! W :w
 command! Q :q
 command! Qa :qa
@@ -232,13 +232,10 @@ map <silent> <Leader>. :Buffers<cr>
 " Double leader to switch to the previous buffer
 map <silent> <Leader><Leader> :b#<CR>
 
-" <Leader>c<space> to toggle comments on a line
-map <silent> <leader>c<space> gcc
-
 "  <Leader>f to fuzzy search files
 map <silent> <leader>f :Files<cr>
 
-"  <Leader>f to fuzzy search files
+"  <Leader>F to fuzzy search files
 map <silent> <leader>F :Explore<cr>
 
 "  <Leader>} to Search for a tag in the current project

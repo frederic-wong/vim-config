@@ -36,7 +36,6 @@ Plug 'maxbrunsfeld/vim-yankstack'                                 " Paste text, 
 Plug 'tpope/vim-commentary'                                       " Quick toggle for code commenting
 Plug 'tpope/vim-abolish'                                          " Allow smartcase substitution and search
 Plug 'tpope/vim-surround'                                         " Quick editing or insertion for surrounding characters (ie. quickly add quotes around a line)
-Plug 'tpope/vim-unimpaired'                                       " Motions to quickly add blank lines, move lines and create lists
 Plug 'kshenoy/vim-signature'                                      " Show marks in the gutter to help me use them more
 
 " Autocomplete
@@ -225,6 +224,10 @@ nnoremap Y y$
 
 " Add jk as an escape sequence
 imap jk <esc>
+
+" Add add blank line above/below current line
+nnoremap [<space> m`o<Esc>``
+nnoremap ]<space> m`O<Esc>``
 
 " <leader>. to view all document buffers
 map <silent> <Leader>. :Buffers<cr>

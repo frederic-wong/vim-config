@@ -226,8 +226,8 @@ nnoremap Y y$
 imap jk <esc>
 
 " Add add blank line above/below current line
-nnoremap [<space> m`o<Esc>``
-nnoremap ]<space> m`O<Esc>``
+nnoremap ]<space> m`o<Esc>``
+nnoremap [<space> m`O<Esc>``
 
 " <leader>. to view all document buffers
 map <silent> <Leader>. :Buffers<cr>

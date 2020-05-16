@@ -229,6 +229,10 @@ imap jk <esc>
 nnoremap ]<space> m`o<Esc>``
 nnoremap [<space> m`O<Esc>``
 
+" Add line moving shortcuts
+map <silent>[e :m -2<cr>
+map <silent>]e :m +1<cr>
+
 " <leader>. to view all document buffers
 map <silent> <Leader>. :Buffers<cr>
 

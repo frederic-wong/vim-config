@@ -91,7 +91,7 @@ set formatoptions+=j                    " Delete comment characters when joining
 set hidden                              " Allow buffer switching without saving
 set history=1000                        " Remember a decent way back
 set laststatus=2                        " Always show status line.
-set listchars=nbsp:█,eol:¶,tab:>-,extends:»,precedes:«,trail:•
+set listchars=trail:•,tab:»•,nbsp:␣
 set mousehide                           " Hide the mouse cursor when typing
 set nofoldenable                        " Disable all folding of content
 set nojoinspaces                        " Use only 1 space after "." when joining lines instead of 2
@@ -292,7 +292,7 @@ nmap <silent> <Leader>gu :CocCommand git.chunkUndo<CR>
 nmap <silent> <leader>H :set nolist!<CR>
 
 " <Leader>i to reindent the current file
-map <silent> <leader>i  mzgg=G`z
+map <silent> <leader>i  m`gg=G``
 
 " <Leader>m to toggle file tree (,M to select the current file in the tree)
 nmap <silent> <Leader>m :Explore<CR>
@@ -633,11 +633,9 @@ autocmd FileType netrw nnoremap <buffer><silent>u -
 
 " strip trailing whitespace
 function! StripTrailingWhitespace()
-	normal mz
-	normal Hmy
-	exec '%s/\s*$//g'
-	normal 'yz<cr>
-	normal `z
+	normal m`
+	exec '%s/\s*$//'
+	normal ``
 endfunction
 
 "define :Lorem command to dump in a paragraph of lorem ipsum

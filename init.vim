@@ -327,16 +327,12 @@ nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
 "  <Leader>z to zoom pane when using splits
 map <Leader>z :ZoomWin<CR>
 
-"  <Leader>= to switch to better style for projecting
-noremap <silent> <leader>= :ToggleProjectorMode<CR>
-
 "  <Leader>$ to toggle line wrap
 map <silent> <leader>$ :set wrap!<CR>
 
 if has('gui_running')
   " Ctrl+s to write the file (would scroll-lock Vim in the terminal!)
   map <C-s> <esc>:w<CR>
-  imap <C-s> <esc>:w<CR>
 endif
 
 " Map <leader>* to search for the current work under the cursor in all files
@@ -409,6 +405,30 @@ autocmd FileType make set noexpandtab
 
 " Slim -------------------------------------
 autocmd BufNewFile,BufRead *.slim :setlocal cursorcolumn
+
+" CSS -------------------------------------
+" Fix syntax issues for CSS elements with a dash in the name
+augroup VimCSS3Syntax
+  autocmd!
+  autocmd FileType css setlocal iskeyword+=-
+augroup END
+
+" iCal -------------------------------------
+augroup icalendar_ft
+  au!
+  autocmd BufNewFile,BufRead *.ics   set syntax=icalendar
+augroup END
+
+" Fix syntax issues for CSS elements with a dash in the name
+augroup VimCSS3Syntax
+  autocmd!
+  autocmd FileType css setlocal iskeyword+=-
+augroup END
+
+augroup icalendar_ft
+  au!
+  autocmd BufNewFile,BufRead *.ics   set syntax=icalendar
+augroup END
 
 " ----------------------------------------------
 " Auto-complete
@@ -606,37 +626,6 @@ let g:netrw_liststyle = 3
 autocmd FileType netrw nnoremap <buffer><silent>q :bd<CR>
 autocmd FileType netrw nnoremap <buffer><silent>a %
 autocmd FileType netrw nnoremap <buffer><silent>u -
-
-" ----------------------------------------------
-" Setup filetype specific settings
-" ----------------------------------------------
-" Ignore blank lines when calculating indentaiton on ansible yml configs
-let g:ansible_options = {'ignore_blank_lines': 0}
-let g:javascript_enable_domhtmlcss = 1
-
-" Fix syntax issues for CSS elements with a dash in the name
-augroup VimCSS3Syntax
-  autocmd!
-  autocmd FileType css setlocal iskeyword+=-
-augroup END
-
-augroup icalendar_ft
-  au!
-  autocmd BufNewFile,BufRead *.ics   set syntax=icalendar
-augroup END
-
-" ----------------------------------------------
-" Configure GitGutter
-" ----------------------------------------------
-" Set the git gutter colors to be the same as the number column
-hi clear SignColumn
-
-" Set the Gutter to show all the time, avoiding the column 'pop' when saving
-let g:gitgutter_sign_added = '+'
-let g:gitgutter_sign_modified = '~'
-let g:gitgutter_sign_removed = '-'
-let g:gitgutter_sign_modified_removed = '~-'
-let g:gitgutter_max_signs = 1000
 
 " ----------------------------------------------
 " Add Misc helpful functions

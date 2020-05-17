@@ -46,7 +46,6 @@ Plug 'noahfrederick/vim-skeleton'                                 " Load a templ
 
 " Language specific tools
 Plug 'sheerun/vim-polyglot'                                       " Currated group of other excellent plugins
-Plug 'adamwhittingham/vim-comb', {'do': './install.sh'}           " Organise and format CSS selectors like a proper human
 Plug 'hail2u/vim-css3-syntax'                                     " CSS3 syntax parsing
 Plug 'vim-scripts/icalendar.vim'                                  " Syntax for iCal files
 
@@ -419,17 +418,6 @@ augroup icalendar_ft
   autocmd BufNewFile,BufRead *.ics   set syntax=icalendar
 augroup END
 
-" Fix syntax issues for CSS elements with a dash in the name
-augroup VimCSS3Syntax
-  autocmd!
-  autocmd FileType css setlocal iskeyword+=-
-augroup END
-
-augroup icalendar_ft
-  au!
-  autocmd BufNewFile,BufRead *.ics   set syntax=icalendar
-augroup END
-
 " ----------------------------------------------
 " Auto-complete
 " ----------------------------------------------
@@ -601,7 +589,6 @@ command! -nargs=* Ag
 let g:projectionist_heuristics ={
       \  "spec/*.rb": {
       \     "app/*.rb":                   { "alternate": "spec/{}_spec.rb",                                         "type": "source"},
-      \     "app/*.slim":                 { "alternate": "spec/{}.slim_spec.rb",                                    "type": "source"},
       \     "app/javascript/src/*.js":    { "alternate": "spec/javascript/{}.test.js",                              "type": "source"},
       \     "app/javascript/src/*.jsx":   { "alternate": "spec/javascript/{}.test.js",                              "type": "source"},
       \     "lib/*.rb":                   { "alternate": "spec/{}_spec.rb",                                         "type": "source"},

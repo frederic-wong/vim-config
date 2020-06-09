@@ -630,7 +630,7 @@ function! StripTrailingWhitespace()
 endfunction
 
 function! InvokeRspecViaTmux(test)
-  let l:targetWindow = trim(system('tmux list-windows | grep "test" | cut -f1 -d":"'))
+  let l:targetWindow = trim(system('tmux list-windows | grep "test" | cut -f1 -d":" | head -1'))
   if empty(l:targetWindow)
     let l:targetWindow = 3
   endif

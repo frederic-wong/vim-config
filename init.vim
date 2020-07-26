@@ -82,7 +82,6 @@ set backspace=start,indent,eol
 set backupdir=/var/tmp,~/.tmp,.         " Don't clutter project dirs up with swap files
 set breakindent
 set cf                                  " Enable error files & error jumping.
-set cmdheight=2                         " Allow a bit more space for messages
 set complete+=kspell
 set directory=/var/tmp,~/.tmp,.         " Set the directory for working files created by vim
 set tabstop=2 shiftwidth=2 expandtab    " Convert tabs to 2 spaces AS IS RIGHT AND PROPER
@@ -92,6 +91,7 @@ set hidden                              " Allow buffer switching without saving
 set history=1000                        " Remember a decent way back
 set iskeyword-=_                        " Remove _
 set laststatus=2                        " Always show status line.
+set lazyredraw                          " Skip redraw when applying macros and scripts
 set listchars=trail:•,tab:»•,nbsp:␣
 set mousehide                           " Hide the mouse cursor when typing
 set nofoldenable                        " Disable all folding of content
@@ -138,7 +138,6 @@ set statusline+=\ %y " Filetype
 set statusline+=\ %r " Read-only status
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding}\(%{&fileformat}\)
 set statusline+=\ %l:%c
-set statusline+=\
 
 " -----------------------------------
 " Setup file wildcard ignored names
@@ -146,7 +145,7 @@ set statusline+=\
 
 set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem          " Disable output and VCS files
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.jar                " Disable archive files
-set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/* " Ignore bundler and sass caches
+set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/vendor/bundle/*,*/.bundle/*,*/.sass-cache/* " Ignore bundler and sass caches
 set wildignore+=*/tmp/cache/*                                                " Ignore rails temporary asset caches
 set wildignore+=node_modules/*                                               " Ignore node modules
 set wildignore+=deps/*,_build/*                                              " Ignore Elixir & Phoenix deps and build
@@ -209,22 +208,11 @@ call yankstack#setup()
 " Command Shortcuts
 " ----------------------------------------------
 
-" Remap jump to mark to M (replaces middle of screen)
-noremap M `
-
 " Disable Ex Mode to remove confusion
 nnoremap Q <Nop>
 
-" make W and Q act like w and q for when I accidentally hold shift too long
-command! W :w
-command! Q :q
-command! Qa :qa
-
 " make Y consistent with C and D
 nnoremap Y y$
-
-" Add jk as an escape sequence
-imap jk <esc>
 
 " Add add blank line above/below current line
 nnoremap ]<space> m`o<Esc>``
@@ -239,6 +227,9 @@ map <silent> <Leader>. :Buffers<cr>
 
 " Double leader to switch to the previous buffer
 map <silent> <Leader><Leader> :b#<CR>
+
+" <Leader>d to show the directory tree
+nmap <silent> <Leader>d :Explore<CR>
 
 "  <Leader>f to fuzzy search files
 map <silent> <leader>f :Files<cr>
@@ -295,8 +286,8 @@ nmap <silent> <leader>H :set nolist!<CR>
 " <Leader>i to reindent the current file
 map <silent> <leader>i  m`gg=G``
 
-" <Leader>m to toggle file tree (,M to select the current file in the tree)
-nmap <silent> <Leader>m :Explore<CR>
+" <leader>m to set mark
+noremap <leader>m `
 
 " Rename the tag under the cursor
 nmap <leader>r <Plug>(coc-rename)
@@ -617,6 +608,7 @@ let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 
 autocmd FileType netrw nnoremap <buffer><silent>q :bd<CR>
+autocmd FileType netrw nnoremap <buffer><silent><esc> :bd<CR>
 autocmd FileType netrw nnoremap <buffer><silent>a %
 autocmd FileType netrw nnoremap <buffer><silent>u -
 

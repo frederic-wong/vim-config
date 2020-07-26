@@ -102,7 +102,7 @@ hi Label                      guifg=#7E8AA2 ctermfg=103  gui=NONE cterm=NONE
 hi Number                     guifg=#AFFF4B ctermfg=155  gui=NONE cterm=NONE
 hi Operator                   guifg=#7E8AA2 ctermfg=103  gui=NONE cterm=NONE
 hi Special                    guifg=#84FF00 ctermfg=118  gui=NONE cterm=NONE
-hi Statement                  guifg=#8C5FE6 ctermfg=98   gui=NONE cterm=NONE
+hi Statement                  guifg=#9F20FF ctermfg=98   gui=NONE cterm=NONE
 hi String                     guifg=#AFFF4B ctermfg=155  gui=NONE cterm=NONE
 hi Structure                  guifg=#7E8AA2 ctermfg=103  gui=NONE cterm=NONE
 hi Title                      guifg=#F6F3E8 ctermfg=255  gui=NONE cterm=NONE

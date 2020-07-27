@@ -27,6 +27,7 @@ Plug 'junegunn/fzf.vim'                                           " Add nice FZF
 Plug 'AdamWhittingham/vim-copy-filename'                          " Quick shortcuts for copying the file name, path and/or line number
 Plug 'ludovicchabant/vim-gutentags'                               " Better automated generation and update of ctags files
 Plug 'tpope/vim-projectionist'                                    " Map tools and actions based on the project
+Plug 'editorconfig/editorconfig-vim'                              " Make use of EditorConfig files
 
 " Extra text manipulation and movement
 Plug 'AndrewRadev/splitjoin.vim'                                  " Quick joining or splitting of programming constructs (ie. `if...else...` to `? ... : ...`)
@@ -394,6 +395,8 @@ let g:vim_markdown_folding_disabled=1
 let g:ansible_options = {'ignore_blank_lines': 0}
 autocmd BufNewFile,BufRead *.yml :setlocal cursorcolumn
 autocmd BufNewFile,BufRead *.yaml :setlocal cursorcolumn
+autocmd BufNewFile,BufRead *.yml :setlocal spell
+autocmd BufNewFile,BufRead *.yaml :setlocal spell
 
 " MAKE -------------------------------------
 " Leave tabs as tabs in Makefiles
@@ -643,6 +646,8 @@ command! -nargs=0 Lorem :normal iLorem ipsum dolor sit amet, consectetur
       \ fugiat nulla pariatur.  Excepteur sint occaecat cupidatat non
       \ proident, sunt in culpa qui officia deserunt mollit anim id est
       \ laborum
+
+set pyx=3
 
 " ----------------------------------------------
 "  Source any local config

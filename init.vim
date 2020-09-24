@@ -90,7 +90,9 @@ set fillchars+=vert:\                   " Set the window borders to not have | c
 set formatoptions+=j                    " Delete comment characters when joining lines
 set hidden                              " Allow buffer switching without saving
 set history=1000                        " Remember a decent way back
-set iskeyword-=_                        " Remove _
+set iskeyword+=\-                       " Add - as a keyword
+set iskeyword+=\!                       " Add ! as a keyword
+set iskeyword+=\?                       " Add ? as a keyword
 set laststatus=2                        " Always show status line.
 set lazyredraw                          " Skip redraw when applying macros and scripts
 set listchars=trail:•,tab:»•,nbsp:␣

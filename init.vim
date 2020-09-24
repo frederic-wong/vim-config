@@ -335,7 +335,7 @@ if has('gui_running')
 endif
 
 " Map <leader>* to search for the current work under the cursor in all files
-nmap <leader>* <Plug>CtrlSFCwordExec
+nmap <leader>* :Ag <C-r>=expand('<cword>')<CR><CR>
 
 " F3 to run rubocop
 map <silent> <F3> <esc>:! rubocop -a %<CR>
